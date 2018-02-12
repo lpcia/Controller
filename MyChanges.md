@@ -1,32 +1,32 @@
-//  DCC++ CONTROLLER: Configuration and Initialization
-//
-//  * Defines all global variables and objects
-//
-//  * Reads and loads previous status data from status files
-//
-//  * Implements track layout(s), throttles, track buttons, route buttons,
-//    cab buttons, function buttons, windows, current meter,
-//    and all other user-specified components
-//
-//
-//  THINGS TO DO:
-//    Make sure power is off when hitting the quit button
-//    Error when pressing a throttle when power is not on.
-//    Add Turnouts to main screen.   PVC
-//    Add indicator (Signal?) lamps for sidings that are clear to the main line.   PVC
-//
-//    DECLARE "GLOBAL" VARIABLES and OBJECTS  - My Additions
-//    PImage layoutPhoto; 
-//
-//
-// Create the Layout bacground  -  place somewhere in initalize() (starts on line 88)
-//                                 after declareing as PImage in // DECLARE "GLOBAL" VARIABLES and OBJECTS
-//    layoutPhoto = loadImage("LKpng99bVO.png");
-//        image(layoutPhoto, 250, 50);
-//  
-//  Record of changes to other .pde files:
-//	2018 02 12 Started Over to make sure I kept track of the changes.	
-//
+    //  DCC++ CONTROLLER: Configuration and Initialization
+    //
+    //  * Defines all global variables and objects
+    //
+    //  * Reads and loads previous status data from status files
+    //
+    //  * Implements track layout(s), throttles, track buttons, route buttons,
+    //    cab buttons, function buttons, windows, current meter,
+    //    and all other user-specified components
+    //
+    //
+    //  THINGS TO DO:
+    //    Make sure power is off when hitting the quit button
+    //    Error when pressing a throttle when power is not on.
+    //    Add Turnouts to main screen.   PVC
+    //    Add indicator (Signal?) lamps for sidings that are clear to the main line.   PVC
+    //
+    //    DECLARE "GLOBAL" VARIABLES and OBJECTS  - My Additions
+    //    PImage layoutPhoto; 
+    //
+    //
+    // Create the Layout bacground  -  place somewhere in initalize() (starts on line 88)
+    //                                 after declareing as PImage in // DECLARE "GLOBAL" VARIABLES and OBJECTS
+    //    layoutPhoto = loadImage("LKpng99bVO.png");
+    //        image(layoutPhoto, 250, 50);
+    //  
+    //  Record of changes to other .pde files:
+    //	2018 02 12 Started Over to make sure I kept track of the changes.	
+    //
 
     // Cab 1
     cab77 = new CabButton(tAx-125,tAy-150,50,30,150,15,77,throttleA);  // Create a CabButton Object w/
@@ -49,7 +49,7 @@
     cab91.setFunction(35,285,60,22,60,10,9,"Brake Squeal",ButtonType.ONESHOT);
     cab91.setFunction(35,315,60,22,60,10,11,"Handbrake",ButtonType.NORMAL);    
     // Cab 3
-// ...    
+    // ...    
     // Cab 8
     cab8 = new CabButton(tAx-125,tAy+130,50,30,150,15,108,throttleA);  // Create a CabButton Object w/
     cab8.setThrottleDefaults(100,50,-50,-45);  //  WHAT IS THIS?? 
