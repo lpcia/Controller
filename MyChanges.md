@@ -1,4 +1,3 @@
-//////////////////////////////////////////////////////////////////////////
 //  DCC++ CONTROLLER: Configuration and Initialization
 //
 //  * Defines all global variables and objects
@@ -28,7 +27,6 @@
 //  Record of changes to other .pde files:
 //	2018 02 12 Started Over to make sure I kept track of the changes.	
 //
-//////////////////////////////////////////////////////////////////////////
 
     // Cab 1
     cab77 = new CabButton(tAx-125,tAy-150,50,30,150,15,77,throttleA);  // Create a CabButton Object w/
@@ -51,7 +49,7 @@
     cab91.setFunction(35,285,60,22,60,10,9,"Brake Squeal",ButtonType.ONESHOT);
     cab91.setFunction(35,315,60,22,60,10,11,"Handbrake",ButtonType.NORMAL);    
     // Cab 3
-========================
+// ...    
     // Cab 8
     cab8 = new CabButton(tAx-125,tAy+130,50,30,150,15,108,throttleA);  // Create a CabButton Object w/
     cab8.setThrottleDefaults(100,50,-50,-45);  //  WHAT IS THIS?? 
