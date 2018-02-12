@@ -31,6 +31,13 @@
     <Program>SINGLE CAB PARK</Program>
     <CabList>622</CabList>
     <Cab2904>STOP</Cab2904>
+    <Cab77>STOP</Cab77>
+    <Cab91>STOP</Cab91>
+    <Cab108>STOP</Cab108>
+    <Cab109>STOP</Cab109>
+    <Cab110>STOP</Cab110>
+    <Cab111>STOP</Cab111>
+    <Cab112>STOP</Cab112>
   </autoPilot>
   <cabDefaults>
     <Cab2004>
@@ -57,6 +64,27 @@
     <Cab2904>
       <throttleDefaults FULL="100" REVERSE="-50" REVERSE_SLOW="-45" SLOW="50" STOP="0"/>
     </Cab2904>
+    <Cab77>
+      <throttleDefaults FULL="100" REVERSE="-50" REVERSE_SLOW="-45" SLOW="50" STOP="0"/>
+    </Cab77>
+    <Cab91>
+      <throttleDefaults FULL="53" REVERSE="-20" REVERSE_SLOW="-13" SLOW="30" STOP="0"/>
+    </Cab91>
+    <Cab108>
+      <throttleDefaults FULL="100" REVERSE="-50" REVERSE_SLOW="-45" SLOW="50" STOP="0"/>
+    </Cab108>
+    <Cab109>
+      <throttleDefaults FULL="100" REVERSE="-50" REVERSE_SLOW="-45" SLOW="50" STOP="0"/>
+    </Cab109>
+    <Cab110>
+      <throttleDefaults FULL="100" REVERSE="-50" REVERSE_SLOW="-45" SLOW="50" STOP="0"/>
+    </Cab110>
+    <Cab111>
+      <throttleDefaults FULL="100" REVERSE="-50" REVERSE_SLOW="-45" SLOW="50" STOP="0"/>
+    </Cab111>
+    <Cab112>
+      <throttleDefaults FULL="100" REVERSE="-50" REVERSE_SLOW="-45" SLOW="50" STOP="0"/>
+    </Cab112>
   </cabDefaults>
   <arduinoPort>/dev/tty.usbmodem1431</arduinoPort>
   <serverList>192.168.1.169</serverList>
