@@ -86,8 +86,8 @@ import java.util.*;
 
 final String   CONTROLLER_VERSION  = "3.0";
 final int      BASE_BAUD       =    115200;
-final int      SCREEN_WIDTH    =    1574; // 1366;
-final int      SCREEN_HEIGHT   =    961;// 768;
+final int      SCREEN_WIDTH    =    1552; // 1366;
+final int      SCREEN_HEIGHT   =    945;// 768;
 final String   STATUS_FILE     =    "dccStatus.xml";
 PImage backGroundImage;
 
