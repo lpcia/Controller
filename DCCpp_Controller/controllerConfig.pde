@@ -307,12 +307,13 @@
 
     throttleA=new Throttle(tAx,tAy,1.3);
     
-    // Cab 1
+    // Cab 1  Digitrax 1 Amp N Scale Mobile Decoder for Kato N scale SD40-2 locos made from year 2006 onward (DN163K1C)
     cab77 = new CabButton(tAx-125,tAy-150,50,30,#A2724D,15,77,throttleA);  // Create a CabButton Object w/
     cab77.setThrottleDefaults(100,50,-50,-45);  //  WHAT IS THIS?? 
     cab77.functionButtonWindow(220,59,70,340,backgroundColor,backgroundColor);
     cab77.setFunction(35,15,60,22,60,10,0,"Lights",ButtonType.NORMAL,CabFunction.F_LIGHT,CabFunction.R_LIGHT);
-    // Cab 2  
+ 
+    // Cab 2  Digitrax 1 Amp N Scale SoundFX/Mobile/FX3 Function Decoder for Kato SD40-2 and similar locos (SDN144K1E)
     cab91 = new CabButton(tAx-125,tAy-110,50,30,150,15,91,throttleA);
     cab91.setThrottleDefaults(53,30,-20,-13);  //  WHAT IS THIS?? 
     cab91.functionButtonWindow(220,59,70,340,backgroundColor,backgroundColor);
