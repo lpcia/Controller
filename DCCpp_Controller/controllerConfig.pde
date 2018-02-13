@@ -94,7 +94,7 @@
     buttonFont=loadFont("LucidaConsole-18.vlw");
     rectMode(CENTER);
     textAlign(CENTER,CENTER);
-    // backgroundColor=color(50,50,60);
+    backgroundColor=color(#A2724D);
     backGroundImage = loadImage("DCCppBackground.png");
     aPort=new ArduinoPort();
     
@@ -239,7 +239,7 @@
     new MessageBox(diagWindow,10,90,-1,0,color(175),18,"Proc:",color(50,50,200));
     msgBoxDiagIn=new MessageBox(diagWindow,250,90,0,0,color(175),18,"---",color(50,50,200));
 
-// CREATE THE AUTOPILOT DIAGNOSTICS WINDOW 
+/* CREATE THE AUTOPILOT DIAGNOSTICS WINDOW  // No need for autopilot on my layout.
     
     autoWindow = new Window(400,300,500,330,color(175),color(50,200,50));
     new DragBar(autoWindow,0,0,500,10,color(50,200,50));
@@ -247,7 +247,7 @@
     new MessageBox(autoWindow,250,20,0,0,color(175),18,"AutoPilot Window",color(50,50,150));
     msgAutoState=new MessageBox(autoWindow,0,180,-1,0,color(175),18,"?",color(50,50,250));
     msgAutoTimer=new MessageBox(autoWindow,55,310,-1,0,color(175),18,"Timer =",color(50,50,250));
-    
+*/    
 // CREATE THE SENSORS DIAGNOSTICS WINDOW 
     
     sensorWindow = new Window(400,300,500,350,color(175),color(50,200,50));
@@ -267,7 +267,7 @@
     new MessageBox(extrasWindow,250,20,0,0,color(175),18,"Extra Functions",color(50,50,200));
 //    new RectButton(extrasWindow,260,80,120,50,85,color(0),16,"Sound\nEffects",0);        
 
-// CREATE THE LED LIGHT-STRIP WINDOW:
+/* CREATE THE LED LIGHT-STRIP WINDOW:    // No Light Show for me (yet)
 
     ledWindow = new Window(500,200,550,425,color(0),color(0,0,200));
     new DragBar(ledWindow,0,0,550,10,color(0,0,200));
@@ -282,21 +282,21 @@
     ledRedMsg = new MessageBox(ledWindow,360,185,-1,0,color(175),18,"Red:   -",color(200,200,200));
     ledGreenMsg = new MessageBox(ledWindow,360,220,-1,0,color(175),18,"Green: -",color(200,200,200));
     ledBlueMsg = new MessageBox(ledWindow,360,255,-1,0,color(175),18,"Blue:  -",color(200,200,200));
-
+*/
 // CREATE TOP-OF-SCREEN MESSAGE BAR AND HELP BUTTON
 
     msgBoxMain=new MessageBox(width/2,12,width,25,color(200),20,"Searching for Base Station: "+arduinoPortXML.getContent(),color(30,30,150));
     new HelpButton(width-50,12,22,22,150,20,"?");
 
-// CREATE CLOCK
-
-    msgBoxClock=new MessageBox(50,730,-100,30,backgroundColor,30,"00:00:00",color(255,255,255));
-    
 // CREATE POWER BUTTON, QUIT BUTTON, and CURRENT METER
     
-    powerButton=new PowerButton(75,570,100,30,100,18,"POWER");
-    new QuitButton(175,570,100,30,250,18,"QUIT");
-    currentMeter = new CurrentMeter(30,600,150,100,675,5);
+    powerButton=new PowerButton(75,735,100,30,100,18,"POWER");
+    new QuitButton(175,735,100,30,250,18,"QUIT");
+    
+    currentMeter = new CurrentMeter(30,765,300,100,675,5);
+
+// CREATE CLOCK
+    msgBoxClock=new MessageBox(120,895,-150,30,#A2724D,30,"00:00:00",color(255,255,255));
 
 // CREATE THROTTLE, DEFINE CAB BUTTONS, and SET FUNCTIONS FOR EACH CAB
     
@@ -308,7 +308,7 @@
     throttleA=new Throttle(tAx,tAy,1.3);
     
     // Cab 1
-    cab77 = new CabButton(tAx-125,tAy-150,50,30,150,15,77,throttleA);  // Create a CabButton Object w/
+    cab77 = new CabButton(tAx-125,tAy-150,50,30,#A2724D,15,77,throttleA);  // Create a CabButton Object w/
     cab77.setThrottleDefaults(100,50,-50,-45);  //  WHAT IS THIS?? 
     cab77.functionButtonWindow(220,59,70,340,backgroundColor,backgroundColor);
     cab77.setFunction(35,15,60,22,60,10,0,"Lights",ButtonType.NORMAL,CabFunction.F_LIGHT,CabFunction.R_LIGHT);

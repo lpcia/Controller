@@ -102,7 +102,7 @@ class CurrentMeter extends DccComponent{
     strokeWeight(1);
     textFont(buttonFont,8);
     textAlign(LEFT,CENTER);
-    stroke(200);
+    stroke(#A2724D);
     rect(xPos,yPos,nSamples+1,kHeight+2);
     if(isOn)
       stroke(50,200,100);
@@ -111,11 +111,11 @@ class CurrentMeter extends DccComponent{
     for(i=0;i<nSamples;i++){
       line(xPos+1+i,yPos+kHeight+1,xPos+1+i,yPos+kHeight+1-samples[(sampleIndex+i)%nSamples]*kHeight/maxCurrent);
     }
-    stroke(200);
+    stroke(#A2724D);
     for(i=1;i<nGridLines;i++){
       line(xPos+1,yPos+kHeight+1-kHeight*i/nGridLines,xPos+1+nSamples,yPos+kHeight+1-kHeight*i/nGridLines);
     }
-    fill(255);
+    fill(#A2724D);
     for(i=0;i<=nGridLines;i++){
       text(nf(i*2000/nGridLines,0)+" mA",xPos+10+nSamples,yPos+kHeight+1-kHeight*i/nGridLines);
     }
