@@ -159,7 +159,7 @@ void draw(){
     }
   }
   
-  autoPilot.safetyCheck();
+//  autoPilot.safetyCheck();
     
 } // draw
 

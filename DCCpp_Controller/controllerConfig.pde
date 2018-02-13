@@ -407,7 +407,7 @@
 //  CREATE THE IMAGE WINDOW FOR THROTTLE A (must be done AFTER throttle A is defined above)
 
     imageWindow=new ImageWindow(throttleA,975,450,200,50,color(200,50,50));    
-
+/*
 // CREATE AUTO PILOT BUTTON and CLEANING CAR BUTTON (must be done AFTER cab buttons are defined above)
 
     autoPilot=new AutoPilotButton(325,550,100,50,30,18,"AUTO\nPILOT");
@@ -1078,7 +1078,7 @@
     //cab8601.setSidingDefaults(rButton4,11,12);
     //cab1202.setSidingDefaults(rButton5,11,13);
     //cab2004.setSidingDefaults(rButton7,5,14);
-    
+*/
   } // Initialize
 
 //////////////////////////////////////////////////////////////////////////
