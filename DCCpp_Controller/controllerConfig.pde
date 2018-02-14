@@ -81,7 +81,7 @@
   RouteButton      rButton10,rButton11,rButton12,rButton13,rButton14;
   RouteButton      rButtonR1,rButtonR2,rButton15,rButton16,rButton17,rButtonSpiral,rButtonReset,rButtonBridge;  
 
-  CabButton        cab85,cab54,cab5,cab1506,cab91,cab77,cab55,cab8,cab9,cab10,cab11,cab12;
+  CabButton        cab5,cab55,cab7,cab77,cab91,cab85,cab4,cab9,cab8,cab6720,cab11,cab12;
   
 ////////////////////////////////////////////////////////////////////////
 //  Initialize --- configures everything!
@@ -308,127 +308,143 @@
     throttleA=new Throttle(tAx,tAy,1.3);
     
     // void setThrottleDefaults(int fullSpeed, int slowSpeed, int reverseSpeed, int reverseSlowSpeed){
+
+    // Cab 1 -150
+    //  Santa Fe F7A  |Road Number: 300 |DCC Addr: 5 |Decoder: Digitrax SDN144K0A  |Model:  Kato 176-2121
+    //  Digitrax 1 Amp N Scale SoundFX/Mobile/FX3 Function Decoder for Kato SD40-2 and similar locos (SDN144K1E)
+        cab5 = new CabButton(tAx-125,tAy-150,50,30,150,15,5,throttleA);
+        cab5.setThrottleDefaults(53,30,-20,-13);  //  WHAT IS THIS?? 
+        cab5.functionButtonWindow(220,59,70,340,backgroundColor,backgroundColor);
+            cab5.setFunction(35,15,60,22,60,10,0,"Lights",ButtonType.NORMAL,CabFunction.F_LIGHT,CabFunction.R_LIGHT);
+            cab5.setFunction(35,45,60,22,60,10,1,"Bell",ButtonType.NORMAL,CabFunction.BELL);
+            cab5.setFunction(35,75,60,22,60,10,2,"Horn",ButtonType.HOLD,CabFunction.HORN);
+            cab5.setFunction(35,105,60,22,60,10,3,"Coupler",ButtonType.ONESHOT);
+            cab5.setFunction(35,135,60,22,60,10,4,"Air Feature Disable",ButtonType.ONESHOT);
+            cab5.setFunction(35,165,60,22,60,10,5,"Dynamic\nBrake",ButtonType.NORMAL);
+            cab5.setFunction(35,195,60,22,60,10,6,"Notch Up",ButtonType.ONESHOT);
+            cab5.setFunction(35,225,60,22,60,10,7,"Crossing Gate",ButtonType.ONESHOT);
+            cab5.setFunction(35,255,60,22,60,10,8,"Mute",ButtonType.NORMAL);
+            cab5.setFunction(35,285,60,22,60,10,9,"Brake Squeal",ButtonType.ONESHOT);
+            cab5.setFunction(35,315,60,22,60,10,11,"Handbrake",ButtonType.NORMAL);    
     
-    // Cab 1  
+    // Cab 2 -110
+    // Santa Fe F7B |Road Number: 356 |DCC Addr: 55 |Decoder: Digitrax DN163K1C  |Model:  Kato 176-2211
+        cab55 = new CabButton(tAx-125,tAy-110,50,30,150,15,55,throttleA);
+        cab55.setThrottleDefaults(50,25,-25,-15);
+        cab55.functionButtonWindow(220,59,70,340,backgroundColor,backgroundColor);
+      
+    // Cab 3 -70
+    //  Sant SD40-2 |Road Number: 5073 |DCC Addr: 7 |Decoder: Digitrax SDN144K1E |Model:  Kato 176-8208 
+    //  Digitrax 1 Amp N Scale SoundFX/Mobile/FX3 Function Decoder for Kato SD40-2 and similar locos (SDN144K1E)
+        cab7 = new CabButton(tAx-125,tAy-70,50,30,150,15,7,throttleA);
+        cab7.setThrottleDefaults(53,30,-20,-13);  
+        cab7.functionButtonWindow(220,59,70,340,backgroundColor,backgroundColor);
+          cab7.setFunction(35,45,60,22,60,10,1,"Bell",ButtonType.NORMAL,CabFunction.BELL);
+          cab7.setFunction(35,75,60,22,60,10,2,"Horn",ButtonType.HOLD,CabFunction.HORN);
+          cab7.setFunction(35,105,60,22,60,10,3,"Coupler",ButtonType.ONESHOT);
+          cab7.setFunction(35,135,60,22,60,10,4,"Air Feature Disable",ButtonType.ONESHOT);
+          cab7.setFunction(35,165,60,22,60,10,5,"Dynamic\nBrake",ButtonType.NORMAL);
+          cab7.setFunction(35,195,60,22,60,10,6,"Notch Up",ButtonType.ONESHOT);
+          cab7.setFunction(35,225,60,22,60,10,7,"Crossing Gate",ButtonType.ONESHOT);
+          cab7.setFunction(35,255,60,22,60,10,8,"Mute",ButtonType.NORMAL);
+          cab7.setFunction(35,285,60,22,60,10,9,"Brake Squeal",ButtonType.ONESHOT);
+          cab7.setFunction(35,315,60,22,60,10,11,"Handbrake",ButtonType.NORMAL);          
+      
+    // Cab 4 -30  
     //  Santa Fe SD40-2 |Road Number: 5077 |DCC Addr: 77 |Decoder: Digitrax DN163K1C |Model:  Kato 176-8208
     //  Digitrax 1 Amp N Scale Mobile Decoder for Kato N scale SD40-2 locos made from year 2006 onward (DN163K1C)
-    cab77 = new CabButton(tAx-125,tAy-150,50,30,#A2724D,15,77,throttleA);  // Create a CabButton Object w/
-    cab77.setThrottleDefaults(100,50,-50,-45);  //  WHAT IS THIS?? 
-    cab77.functionButtonWindow(220,59,70,340,backgroundColor,backgroundColor);
-    cab77.setFunction(35,15,60,22,60,10,0,"Lights",ButtonType.NORMAL,CabFunction.F_LIGHT,CabFunction.R_LIGHT);
+        cab77 = new CabButton(tAx-125,tAy-30,50,30,#A2724D,15,77,throttleA);  // Create a CabButton Object w/
+        cab77.setThrottleDefaults(100,50,-50,-45);  //  WHAT IS THIS?? 
+        cab77.functionButtonWindow(220,59,70,340,backgroundColor,backgroundColor);
+          cab77.setFunction(35,15,60,22,60,10,0,"Lights",ButtonType.NORMAL,CabFunction.F_LIGHT,CabFunction.R_LIGHT);
  
-    // Cab 2
+    // Cab 5 10
     //  Sant Fe EMD FP5 |Road Number: 91 |DCC Addr: 91 |Decoder: Digitrax SDN144K1E |Model:  Athern ATH22478 
     //  Digitrax 1 Amp N Scale SoundFX/Mobile/FX3 Function Decoder for Kato SD40-2 and similar locos (SDN144K1E)
-    cab91 = new CabButton(tAx-125,tAy-110,50,30,150,15,91,throttleA);
-    cab91.setThrottleDefaults(53,30,-20,-13);  //  WHAT IS THIS?? 
-    cab91.functionButtonWindow(220,59,70,340,backgroundColor,backgroundColor);
-    cab91.setFunction(35,45,60,22,60,10,1,"Bell",ButtonType.NORMAL,CabFunction.BELL);
-    cab91.setFunction(35,75,60,22,60,10,2,"Horn",ButtonType.HOLD,CabFunction.HORN);
-    cab91.setFunction(35,105,60,22,60,10,3,"Coupler",ButtonType.ONESHOT);
-    cab91.setFunction(35,135,60,22,60,10,4,"Air Feature Disable",ButtonType.ONESHOT);
-    cab91.setFunction(35,165,60,22,60,10,5,"Dynamic\nBrake",ButtonType.NORMAL);
-    cab91.setFunction(35,195,60,22,60,10,6,"Notch Up",ButtonType.ONESHOT);
-    cab91.setFunction(35,225,60,22,60,10,7,"Crossing Gate",ButtonType.ONESHOT);
-    cab91.setFunction(35,255,60,22,60,10,8,"Mute",ButtonType.NORMAL);
-    cab91.setFunction(35,285,60,22,60,10,9,"Brake Squeal",ButtonType.ONESHOT);
-    cab91.setFunction(35,315,60,22,60,10,11,"Handbrake",ButtonType.NORMAL);    
-    // Cab 3
+        cab91 = new CabButton(tAx-125,tAy+10,50,30,150,15,91,throttleA);
+        cab91.setThrottleDefaults(53,30,-20,-13);  //  WHAT IS THIS?? 
+        cab91.functionButtonWindow(220,59,70,340,backgroundColor,backgroundColor);
+          cab91.setFunction(35,45,60,22,60,10,1,"Bell",ButtonType.NORMAL,CabFunction.BELL);
+          cab91.setFunction(35,75,60,22,60,10,2,"Horn",ButtonType.HOLD,CabFunction.HORN);
+          cab91.setFunction(35,105,60,22,60,10,3,"Coupler",ButtonType.ONESHOT);
+          cab91.setFunction(35,135,60,22,60,10,4,"Air Feature Disable",ButtonType.ONESHOT);
+          cab91.setFunction(35,165,60,22,60,10,5,"Dynamic\nBrake",ButtonType.NORMAL);
+          cab91.setFunction(35,195,60,22,60,10,6,"Notch Up",ButtonType.ONESHOT);
+          cab91.setFunction(35,225,60,22,60,10,7,"Crossing Gate",ButtonType.ONESHOT);
+          cab91.setFunction(35,255,60,22,60,10,8,"Mute",ButtonType.NORMAL);
+          cab91.setFunction(35,285,60,22,60,10,9,"Brake Squeal",ButtonType.ONESHOT);
+          cab91.setFunction(35,315,60,22,60,10,11,"Handbrake",ButtonType.NORMAL);    
+
+    // Cab 6 50
     // BNSF ES44AC "GEVO"  |Road Number: 5785 |DCC Addr: 85 |Decoder: Digitrax DN163K1C |Model:  Kato 176-8925
-    cab85 = new CabButton(tAx-125,tAy-70,50,30,150,15,85,throttleA);
-    cab85.setThrottleDefaults(77,46,-34,-30);
-    cab85.functionButtonWindow(220,59,70,340,backgroundColor,backgroundColor);
-    cab85.setFunction(35,15,60,22,60,10,0,"Lights",ButtonType.NORMAL,CabFunction.F_LIGHT,CabFunction.R_LIGHT);
-    // Cab 4
-    // Santa Fe F7B |Road Number: 356 |DCC Addr: 55 |Decoder: Digitrax DN163K1C  |Model:  Kato 176-2211
-    cab55 = new CabButton(tAx-125,tAy-30,50,30,150,15,55,throttleA);
-    cab55.setThrottleDefaults(50,25,-25,-15);
-    cab55.functionButtonWindow(220,59,70,340,backgroundColor,backgroundColor);
+        cab85 = new CabButton(tAx-125,tAy+50,50,30,150,15,85,throttleA);
+        cab85.setThrottleDefaults(77,46,-34,-30);
+        cab85.functionButtonWindow(220,59,70,340,backgroundColor,backgroundColor);
+          cab85.setFunction(35,15,60,22,60,10,0,"Lights",ButtonType.NORMAL,CabFunction.F_LIGHT,CabFunction.R_LIGHT);
+
+    // Cab 7 90
+    //  Santa Fe Ge 44 Ton Switcher |Road Number: 62 |DCC Addr: 4 |Decoder: Bachmann 2 Function Decoder 36-552 |Model:  Bachman 81852
+          cab4 = new CabButton(tAx-125,tAy+90,50,30,150,15,4,throttleA);
+          cab4.setThrottleDefaults(61,42,-30,-22);    
+          cab4.functionButtonWindow(220,59,70,340,backgroundColor,backgroundColor);
+            cab4.setFunction(35,15,60,22,60,10,0,"Lights",ButtonType.NORMAL,CabFunction.F_LIGHT,CabFunction.R_LIGHT);
   
-    // Cab 5
+    // Cab 8 130
+    //  Nickle Plate Road PA1 |Road Number: 190 |DCC Addr: 9 |Decoder: Digitrax DN136D |Model:  Lifelike 7058
+        cab9 = new CabButton(tAx-125,tAy+130,50,30,150,15,9,throttleA);
+        cab9.setThrottleDefaults(100,50,-50,-45);  //  WHAT IS THIS?? 
+        cab9.functionButtonWindow(220,59,70,340,backgroundColor,backgroundColor);
+          cab9.setFunction(35,15,60,22,60,10,0,"Lights",ButtonType.NORMAL,CabFunction.F_LIGHT,CabFunction.R_LIGHT);
+  
+    // Cab 9 170
+    //  Santa Fe NW2 Switcher |Road Number: 2404 |DCC Addr: 8 |Decoder: Digitrax K3D3 |Model:  Kobo 176-4366-1
+        cab8 = new CabButton(tAx-125,tAy+170,50,30,150,15,8,throttleA);  // Create a CabButton Object w/
+        cab8.setThrottleDefaults(100,50,-50,-45);  //  WHAT IS THIS?? 
+        cab8.functionButtonWindow(220,59,70,340,backgroundColor,backgroundColor);
+          cab8.setFunction(35,15,60,22,60,10,0,"Lights",ButtonType.NORMAL,CabFunction.F_LIGHT,CabFunction.R_LIGHT);
+  
+    // Cab 10 210
+    //  Pennsylvania  |Road Number: 6720 |DCC Addr:  |Decoder: Digitrax  |Model:  Kato 
+        cab6720 = new CabButton(tAx-125,tAy+210,50,30,150,15,3,throttleA);
+        cab6720.setThrottleDefaults(34,14,-5,-3);
+        cab6720.functionButtonWindow(220,59,70,340,backgroundColor,backgroundColor);
+          cab6720.setFunction(35,15,60,22,60,10,10,"Radiator\nFan",ButtonType.NORMAL);
+          cab6720.setFunction(35,45,60,22,60,10,11,"Air Fill\n/Release",ButtonType.ONESHOT);
+          cab6720.setFunction(35,75,60,22,60,10,14,"Passenger\nDep/Arr",ButtonType.ONESHOT);
+          cab6720.setFunction(35,105,60,22,60,10,18,"City\nSounds",ButtonType.ONESHOT);
+          cab6720.setFunction(35,135,60,22,60,10,19,"Farm\nSounds",ButtonType.ONESHOT);
+          cab6720.setFunction(35,165,60,22,60,10,21,"Lumber\nMill",ButtonType.ONESHOT);
+          cab6720.setFunction(35,195,60,22,60,10,20,"Industry\nSounds",ButtonType.ONESHOT);
+          cab6720.setFunction(35,225,60,22,60,10,13,"Crossing\nHorn",ButtonType.ONESHOT,CabFunction.S_HORN);
+          cab6720.setFunction(35,255,60,22,60,10,22,"Alternate\nHorn",ButtonType.NORMAL);
+          cab6720.setFunction(35,285,60,22,60,10,8,"Mute",ButtonType.NORMAL);
+          cab6720.functionButtonWindow(220,59,70,340,backgroundColor,backgroundColor);
+          cab6720.setFunction(35,15,60,22,60,10,0,"Headlight",ButtonType.NORMAL,CabFunction.F_LIGHT);
+          cab6720.setFunction(35,45,60,22,60,10,1,"Bell",ButtonType.NORMAL,CabFunction.BELL);
+          cab6720.setFunction(35,75,60,22,60,10,2,"Horn",ButtonType.HOLD,CabFunction.HORN);
+          cab6720.setFunction(35,105,60,22,60,10,3,"MARS\nLight",ButtonType.REVERSE,CabFunction.D_LIGHT);
+          cab6720.setFunction(35,135,16,22,60,10,9,"1",ButtonType.NORMAL);
+          cab6720.setFunction(14,135,16,22,60,10,5,"+",ButtonType.ONESHOT);
+          cab6720.setFunction(56,135,16,22,60,10,6,"-",ButtonType.ONESHOT);
+          cab6720.setFunction(35,165,60,22,60,10,15,"Freight\nDep/Arr",ButtonType.ONESHOT);
+          cab6720.setFunction(35,195,60,22,60,10,16,"Facility\nShop",ButtonType.ONESHOT);
+          cab6720.setFunction(35,225,60,22,60,10,17,"Crew\nRadio",ButtonType.ONESHOT);
+          cab6720.setFunction(35,255,60,22,60,10,7,"Coupler",ButtonType.ONESHOT);
+          cab6720.setFunction(35,285,60,22,60,10,4,"Dynamic\nBrake",ButtonType.NORMAL);
+          cab6720.setFunction(35,315,60,22,60,10,12,"Brake\nSqueal",ButtonType.ONESHOT);
+
+    // Cab 11 250
     //   |Road Number:  |DCC Addr:  |Decoder: Digitrax  |Model:  Kato 
-    cab54 = new CabButton(tAx-125,tAy+10,50,30,150,15,54,throttleA);
-    cab54.setThrottleDefaults(34,14,-5,-3);
-    cab54.functionButtonWindow(220,59,70,340,backgroundColor,backgroundColor);
-    cab54.setFunction(35,15,60,22,60,10,10,"Radiator\nFan",ButtonType.NORMAL);
-    cab54.setFunction(35,45,60,22,60,10,11,"Air Fill\n/Release",ButtonType.ONESHOT);
-    cab54.setFunction(35,75,60,22,60,10,14,"Passenger\nDep/Arr",ButtonType.ONESHOT);
-    cab54.setFunction(35,105,60,22,60,10,18,"City\nSounds",ButtonType.ONESHOT);
-    cab54.setFunction(35,135,60,22,60,10,19,"Farm\nSounds",ButtonType.ONESHOT);
-    cab54.setFunction(35,165,60,22,60,10,21,"Lumber\nMill",ButtonType.ONESHOT);
-    cab54.setFunction(35,195,60,22,60,10,20,"Industry\nSounds",ButtonType.ONESHOT);
-    cab54.setFunction(35,225,60,22,60,10,13,"Crossing\nHorn",ButtonType.ONESHOT,CabFunction.S_HORN);
-    cab54.setFunction(35,255,60,22,60,10,22,"Alternate\nHorn",ButtonType.NORMAL);
-    cab54.setFunction(35,285,60,22,60,10,8,"Mute",ButtonType.NORMAL);
-    cab54.functionButtonWindow(220,59,70,340,backgroundColor,backgroundColor);
-    cab54.setFunction(35,15,60,22,60,10,0,"Headlight",ButtonType.NORMAL,CabFunction.F_LIGHT);
-    cab54.setFunction(35,45,60,22,60,10,1,"Bell",ButtonType.NORMAL,CabFunction.BELL);
-    cab54.setFunction(35,75,60,22,60,10,2,"Horn",ButtonType.HOLD,CabFunction.HORN);
-    cab54.setFunction(35,105,60,22,60,10,3,"MARS\nLight",ButtonType.REVERSE,CabFunction.D_LIGHT);
-    cab54.setFunction(35,135,16,22,60,10,9,"1",ButtonType.NORMAL);
-    cab54.setFunction(14,135,16,22,60,10,5,"+",ButtonType.ONESHOT);
-    cab54.setFunction(56,135,16,22,60,10,6,"-",ButtonType.ONESHOT);
-    cab54.setFunction(35,165,60,22,60,10,15,"Freight\nDep/Arr",ButtonType.ONESHOT);
-    cab54.setFunction(35,195,60,22,60,10,16,"Facility\nShop",ButtonType.ONESHOT);
-    cab54.setFunction(35,225,60,22,60,10,17,"Crew\nRadio",ButtonType.ONESHOT);
-    cab54.setFunction(35,255,60,22,60,10,7,"Coupler",ButtonType.ONESHOT);
-    cab54.setFunction(35,285,60,22,60,10,4,"Dynamic\nBrake",ButtonType.NORMAL);
-    cab54.setFunction(35,315,60,22,60,10,12,"Brake\nSqueal",ButtonType.ONESHOT);
-    // Cab 6
+        cab11 = new CabButton(tAx-125,tAy+250,50,30,150,15,111,throttleA);  // Create a CabButton Object w/
+        cab11.setThrottleDefaults(100,50,-50,-45);  //  WHAT IS THIS?? 
+        cab11.functionButtonWindow(220,59,70,340,backgroundColor,backgroundColor);
+          cab11.setFunction(35,15,60,22,60,10,0,"Lights",ButtonType.NORMAL,CabFunction.F_LIGHT,CabFunction.R_LIGHT);
+    // Cab 12 290
     //   |Road Number:  |DCC Addr:  |Decoder: Digitrax  |Model:  Kato 
-    //  Digitrax 1 Amp N Scale SoundFX/Mobile/FX3 Function Decoder for Kato SD40-2 and similar locos (SDN144K1E)
-    cab5 = new CabButton(tAx-125,tAy+50,50,30,150,15,5,throttleA);
-    cab5.setThrottleDefaults(53,30,-20,-13);  //  WHAT IS THIS?? 
-    cab5.functionButtonWindow(220,59,70,340,backgroundColor,backgroundColor);
-    cab5.setFunction(35,15,60,22,60,10,0,"Lights",ButtonType.NORMAL,CabFunction.F_LIGHT,CabFunction.R_LIGHT);
-    cab5.setFunction(35,45,60,22,60,10,1,"Bell",ButtonType.NORMAL,CabFunction.BELL);
-    cab5.setFunction(35,75,60,22,60,10,2,"Horn",ButtonType.HOLD,CabFunction.HORN);
-    cab5.setFunction(35,105,60,22,60,10,3,"Coupler",ButtonType.ONESHOT);
-    cab5.setFunction(35,135,60,22,60,10,4,"Air Feature Disable",ButtonType.ONESHOT);
-    cab5.setFunction(35,165,60,22,60,10,5,"Dynamic\nBrake",ButtonType.NORMAL);
-    cab5.setFunction(35,195,60,22,60,10,6,"Notch Up",ButtonType.ONESHOT);
-    cab5.setFunction(35,225,60,22,60,10,7,"Crossing Gate",ButtonType.ONESHOT);
-    cab5.setFunction(35,255,60,22,60,10,8,"Mute",ButtonType.NORMAL);
-    cab5.setFunction(35,285,60,22,60,10,9,"Brake Squeal",ButtonType.ONESHOT);
-    cab5.setFunction(35,315,60,22,60,10,11,"Handbrake",ButtonType.NORMAL);    
-    // Cab 7
-    //   |Road Number:  |DCC Addr:  |Decoder: Digitrax  |Model:  Kato 
-    cab1506 = new CabButton(tAx-125,tAy+90,50,30,150,15,1506,throttleA);
-    cab1506.setThrottleDefaults(61,42,-30,-22);    
-    cab1506.functionButtonWindow(220,59,70,340,backgroundColor,backgroundColor);
-    cab1506.setFunction(35,15,60,22,60,10,1,"Headlight",ButtonType.NORMAL,CabFunction.F_LIGHT);
-    cab1506.setFunction(35,45,60,22,60,10,0,"Tailight",ButtonType.NORMAL,CabFunction.R_LIGHT);
-    cab1506.setFunction(35,75,60,22,60,10,3,"D-Lights",ButtonType.NORMAL,CabFunction.D_LIGHT);
-    // Cab 8
-    //   |Road Number:  |DCC Addr:  |Decoder: Digitrax  |Model:  Kato 
-    cab8 = new CabButton(tAx-125,tAy+130,50,30,150,15,108,throttleA);  // Create a CabButton Object w/
-    cab8.setThrottleDefaults(100,50,-50,-45);  //  WHAT IS THIS?? 
-    cab8.functionButtonWindow(220,59,70,340,backgroundColor,backgroundColor);
-    cab8.setFunction(35,15,60,22,60,10,0,"Lights",ButtonType.NORMAL,CabFunction.F_LIGHT,CabFunction.R_LIGHT);
-    // Cab 9
-    //   |Road Number:  |DCC Addr:  |Decoder: Digitrax  |Model:  Kato 
-    cab9 = new CabButton(tAx-125,tAy+170,50,30,150,15,109,throttleA);  // Create a CabButton Object w/
-    cab9.setThrottleDefaults(100,50,-50,-45);  //  WHAT IS THIS?? 
-    cab9.functionButtonWindow(220,59,70,340,backgroundColor,backgroundColor);
-    cab9.setFunction(35,15,60,22,60,10,0,"Lights",ButtonType.NORMAL,CabFunction.F_LIGHT,CabFunction.R_LIGHT);
-    // Cab 10
-    //   |Road Number:  |DCC Addr:  |Decoder: Digitrax  |Model:  Kato 
-    cab10 = new CabButton(tAx-125,tAy+210,50,30,150,15,110,throttleA);  // Create a CabButton Object w/
-    cab10.setThrottleDefaults(100,50,-50,-45);  //  WHAT IS THIS?? 
-    cab10.functionButtonWindow(220,59,70,340,backgroundColor,backgroundColor);
-    cab10.setFunction(35,15,60,22,60,10,0,"Lights",ButtonType.NORMAL,CabFunction.F_LIGHT,CabFunction.R_LIGHT); 
-    // Cab 11
-    //   |Road Number:  |DCC Addr:  |Decoder: Digitrax  |Model:  Kato 
-    cab11 = new CabButton(tAx-125,tAy+250,50,30,150,15,111,throttleA);  // Create a CabButton Object w/
-    cab11.setThrottleDefaults(100,50,-50,-45);  //  WHAT IS THIS?? 
-    cab11.functionButtonWindow(220,59,70,340,backgroundColor,backgroundColor);
-    cab11.setFunction(35,15,60,22,60,10,0,"Lights",ButtonType.NORMAL,CabFunction.F_LIGHT,CabFunction.R_LIGHT);
-    // Cab 12
-    //   |Road Number:  |DCC Addr:  |Decoder: Digitrax  |Model:  Kato 
-    cab12 = new CabButton(tAx-125,tAy+290,50,30,150,15,112,throttleA);  // Create a CabButton Object w/
-    cab12.setThrottleDefaults(100,50,-50,-45);  //  WHAT IS THIS?? 
-    cab12.functionButtonWindow(220,59,70,340,backgroundColor,backgroundColor);
-    cab12.setFunction(35,15,60,22,60,10,0,"Lights",ButtonType.NORMAL,CabFunction.F_LIGHT,CabFunction.R_LIGHT);
+        cab12 = new CabButton(tAx-125,tAy+290,50,30,150,15,112,throttleA);  // Create a CabButton Object w/
+        cab12.setThrottleDefaults(100,50,-50,-45);  //  WHAT IS THIS?? 
+        cab12.functionButtonWindow(220,59,70,340,backgroundColor,backgroundColor);
+          cab12.setFunction(35,15,60,22,60,10,0,"Lights",ButtonType.NORMAL,CabFunction.F_LIGHT,CabFunction.R_LIGHT);
 
 
 
