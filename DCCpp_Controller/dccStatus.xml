@@ -47,6 +47,8 @@
     <Cab3>STOP</Cab3>
     <Cab8>STOP</Cab8>
     <Cab113>STOP</Cab113>
+    <Cab114>STOP</Cab114>
+    <Cab115>STOP</Cab115>
   </autoPilot>
   <cabDefaults>
     <Cab2004>
@@ -121,6 +123,12 @@
     <Cab113>
       <throttleDefaults FULL="100" REVERSE="-50" REVERSE_SLOW="-45" SLOW="50" STOP="0"/>
     </Cab113>
+    <Cab114>
+      <throttleDefaults FULL="100" REVERSE="-50" REVERSE_SLOW="-45" SLOW="50" STOP="0"/>
+    </Cab114>
+    <Cab115>
+      <throttleDefaults FULL="100" REVERSE="-50" REVERSE_SLOW="-45" SLOW="50" STOP="0"/>
+    </Cab115>
   </cabDefaults>
   <arduinoPort>/dev/cu.usbmodemFA131</arduinoPort>
   <serverList>192.168.1.169</serverList>
