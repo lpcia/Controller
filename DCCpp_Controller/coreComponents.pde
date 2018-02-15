@@ -12,6 +12,7 @@
 //               -  connection to DCC++ Base Station terminated
 //               -  NOTE: track power remains on and trains will continue to operate
 //                  since DCC+ Base Station operates independently!
+//        PVC NOTE:  I changed this to remove power for the time being.  2018 02 15
 //
 //  AccessoryButton   -  sends a DCC ACCESSORY COMMAND to the DCC++ Base Station
 //                       to either activate or de-activate an accessory depending on
@@ -182,6 +183,7 @@ class QuitButton extends RectButton{
 
   void turnOn(){
     super.turnOn();
+    aPort.write("<0>");  // Turn power off on quit
     exit();
   }
       
