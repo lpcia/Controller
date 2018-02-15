@@ -389,9 +389,9 @@ class FunctionButton extends RectButton{
   String name;
   int oneShotCount;
   int fPolarity;
-  
+
   FunctionButton(Window window, int xPos, int yPos, int bWidth, int bHeight, int baseHue, int fontSize, CabButton cabButton, int fNum, String name, ButtonType buttonType, CabFunction[] cFunc){
-    super(window, xPos, yPos, bWidth, bHeight, baseHue, color(0), fontSize, name, buttonType);
+    super(window, xPos, yPos, bWidth, bHeight, baseHue, color(255), fontSize, name, buttonType);  //  PCV  Changed color(0) to color(255)
     this.fNum=abs(fNum)%29;        // ensures fNum is always between 0 and 28, inclusive
     this.cabButton=cabButton;
     this.name=name;

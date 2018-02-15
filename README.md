@@ -1,3 +1,15 @@
+This Branch of DCC++ is heavly modified to run my personal layout.  My layout is large enough that using Gregg's method of using Track, Sensors, and Switches, was far more complex than I needed.  That said, his way of "Running a Railroad" was the absolute best I have ever seen and it is what sold me on DCC++ in the first place.  I am, however, going to try to incoporate what I can using his classes.
+
+Notes:
+I am a wannabe programmer, and I am using this code to learn.  It is very doubtful that I will be able to answer anything but the most rudimentary questions.
+
+I tried to do this with JMRI, but that system is many things to many people )which is what is so great about it) that the code was far too complex for me to work with.
+
+My thanks to Gregg for making this availabe for use, and for me, learning!
+
+Paul
+
+------------
 What’s DCC++
 ------------
 

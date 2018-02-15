@@ -81,7 +81,7 @@
   RouteButton      rButton10,rButton11,rButton12,rButton13,rButton14;
   RouteButton      rButtonR1,rButtonR2,rButton15,rButton16,rButton17,rButtonSpiral,rButtonReset,rButtonBridge;  
 
-  CabButton        cab5,cab55,cab7,cab77,cab91,cab85,cab4,cab9,cab8,cab6720,cab11,cab12;
+  CabButton        cab5,cab55,cab7,cab77,cab91,cab85,cab4,cab9,cab8,cab6720,cab11,cab12,cab13;
   
 ////////////////////////////////////////////////////////////////////////
 //  Initialize --- configures everything!
@@ -326,7 +326,7 @@
             cab5.setFunction(35,255,60,22,60,10,8,"Mute",ButtonType.NORMAL);
             cab5.setFunction(35,285,60,22,60,10,9,"Brake Squeal",ButtonType.ONESHOT);
             cab5.setFunction(35,315,60,22,60,10,11,"Handbrake",ButtonType.NORMAL);    
-    
+
     // Cab 2 -110
     // Santa Fe F7B |Road Number: 356 |DCC Addr: 55 |Decoder: Digitrax DN163K1C  |Model:  Kato 176-2211
         cab55 = new CabButton(tAx-125,tAy-110,50,30,150,15,55,throttleA);
@@ -339,8 +339,9 @@
         cab7 = new CabButton(tAx-125,tAy-70,50,30,150,15,7,throttleA);
         cab7.setThrottleDefaults(53,30,-20,-13);  
         cab7.functionButtonWindow(220,59,70,340,backgroundColor,backgroundColor);
-          cab7.setFunction(35,45,60,22,60,10,1,"Bell",ButtonType.NORMAL,CabFunction.BELL);
-          cab7.setFunction(35,75,60,22,60,10,2,"Horn",ButtonType.HOLD,CabFunction.HORN);
+          cab7.setFunction(35, 15,60,22,60,10,0,"Lights",ButtonType.NORMAL,CabFunction.F_LIGHT,CabFunction.R_LIGHT);
+          cab7.setFunction(35, 45,60,22,60,10,1,"Bell",ButtonType.NORMAL,CabFunction.BELL);
+          cab7.setFunction(35, 75,60,22,60,10,2,"Horn",ButtonType.HOLD,CabFunction.HORN);
           cab7.setFunction(35,105,60,22,60,10,3,"Coupler",ButtonType.ONESHOT);
           cab7.setFunction(35,135,60,22,60,10,4,"Air Feature Disable",ButtonType.ONESHOT);
           cab7.setFunction(35,165,60,22,60,10,5,"Dynamic\nBrake",ButtonType.NORMAL);
@@ -364,8 +365,9 @@
         cab91 = new CabButton(tAx-125,tAy+10,50,30,150,15,91,throttleA);
         cab91.setThrottleDefaults(53,30,-20,-13);  //  WHAT IS THIS?? 
         cab91.functionButtonWindow(220,59,70,340,backgroundColor,backgroundColor);
-          cab91.setFunction(35,45,60,22,60,10,1,"Bell",ButtonType.NORMAL,CabFunction.BELL);
-          cab91.setFunction(35,75,60,22,60,10,2,"Horn",ButtonType.HOLD,CabFunction.HORN);
+          cab91.setFunction(35, 15,60,22,60,10,0,"Lights",ButtonType.NORMAL,CabFunction.F_LIGHT,CabFunction.R_LIGHT);
+          cab91.setFunction(35, 45,60,22,60,10,1,"Bell",ButtonType.NORMAL,CabFunction.BELL);
+          cab91.setFunction(35, 75,60,22,60,10,2,"Horn",ButtonType.HOLD,CabFunction.HORN);
           cab91.setFunction(35,105,60,22,60,10,3,"Coupler",ButtonType.ONESHOT);
           cab91.setFunction(35,135,60,22,60,10,4,"Air Feature Disable",ButtonType.ONESHOT);
           cab91.setFunction(35,165,60,22,60,10,5,"Dynamic\nBrake",ButtonType.NORMAL);
@@ -403,35 +405,44 @@
         cab8.functionButtonWindow(220,59,70,340,backgroundColor,backgroundColor);
           cab8.setFunction(35,15,60,22,60,10,0,"Lights",ButtonType.NORMAL,CabFunction.F_LIGHT,CabFunction.R_LIGHT);
   
-    // Cab 10 210
-    //  Pennsylvania  |Road Number: 6720 |DCC Addr:  |Decoder: Digitrax  |Model:  Kato 
+//    setFunction(xPos, yPos, bWidth, bHeight, baseHue, fontSize, fNum, "name", buttonType, CabFunction ... cFunc){
+//    new FunctionButton(fbWindow,xPos,yPos,bWidth,bHeight,baseHue,fontSize,this,fNum,name,buttonType,cFunc);}
+  
+    // Cab 10 210    4 >bHeight, 5 > baseHue, 6 > fontSize
+    //  Pennsylvania M1a 4-8-2 |Road Number: 6720 |DCC Addr:  |Decoder: Paragon2 Sound |Model:  Paragon 3073
         cab6720 = new CabButton(tAx-125,tAy+210,50,30,150,15,3,throttleA);
         cab6720.setThrottleDefaults(34,14,-5,-3);
-        cab6720.functionButtonWindow(220,59,70,340,backgroundColor,backgroundColor);
-          cab6720.setFunction(35,15,60,22,60,10,10,"Radiator\nFan",ButtonType.NORMAL);
-          cab6720.setFunction(35,45,60,22,60,10,11,"Air Fill\n/Release",ButtonType.ONESHOT);
-          cab6720.setFunction(35,75,60,22,60,10,14,"Passenger\nDep/Arr",ButtonType.ONESHOT);
-          cab6720.setFunction(35,105,60,22,60,10,18,"City\nSounds",ButtonType.ONESHOT);
-          cab6720.setFunction(35,135,60,22,60,10,19,"Farm\nSounds",ButtonType.ONESHOT);
-          cab6720.setFunction(35,165,60,22,60,10,21,"Lumber\nMill",ButtonType.ONESHOT);
-          cab6720.setFunction(35,195,60,22,60,10,20,"Industry\nSounds",ButtonType.ONESHOT);
-          cab6720.setFunction(35,225,60,22,60,10,13,"Crossing\nHorn",ButtonType.ONESHOT,CabFunction.S_HORN);
-          cab6720.setFunction(35,255,60,22,60,10,22,"Alternate\nHorn",ButtonType.NORMAL);
-          cab6720.setFunction(35,285,60,22,60,10,8,"Mute",ButtonType.NORMAL);
-          cab6720.functionButtonWindow(220,59,70,340,backgroundColor,backgroundColor);
-          cab6720.setFunction(35,15,60,22,60,10,0,"Headlight",ButtonType.NORMAL,CabFunction.F_LIGHT);
-          cab6720.setFunction(35,45,60,22,60,10,1,"Bell",ButtonType.NORMAL,CabFunction.BELL);
-          cab6720.setFunction(35,75,60,22,60,10,2,"Horn",ButtonType.HOLD,CabFunction.HORN);
-          cab6720.setFunction(35,105,60,22,60,10,3,"MARS\nLight",ButtonType.REVERSE,CabFunction.D_LIGHT);
-          cab6720.setFunction(35,135,16,22,60,10,9,"1",ButtonType.NORMAL);
-          cab6720.setFunction(14,135,16,22,60,10,5,"+",ButtonType.ONESHOT);
-          cab6720.setFunction(56,135,16,22,60,10,6,"-",ButtonType.ONESHOT);
-          cab6720.setFunction(35,165,60,22,60,10,15,"Freight\nDep/Arr",ButtonType.ONESHOT);
-          cab6720.setFunction(35,195,60,22,60,10,16,"Facility\nShop",ButtonType.ONESHOT);
-          cab6720.setFunction(35,225,60,22,60,10,17,"Crew\nRadio",ButtonType.ONESHOT);
-          cab6720.setFunction(35,255,60,22,60,10,7,"Coupler",ButtonType.ONESHOT);
-          cab6720.setFunction(35,285,60,22,60,10,4,"Dynamic\nBrake",ButtonType.NORMAL);
-          cab6720.setFunction(35,315,60,22,60,10,12,"Brake\nSqueal",ButtonType.ONESHOT);
+        cab6720.functionButtonWindow(220,59,1,1,backgroundColor,backgroundColor);
+          cab6720.setFunction(80, 15,160,26,60,12, 0,"Headlight",ButtonType.NORMAL,CabFunction.F_LIGHT);
+          cab6720.setFunction(80, 45,160,26,60,12, 1,"Bell",ButtonType.NORMAL,CabFunction.BELL);
+          cab6720.setFunction(53, 75,106,26,60,12, 2,"Whistle",ButtonType.HOLD,CabFunction.HORN);
+          cab6720.setFunction(137,75, 45,26,60,12,22,"Alt",ButtonType.NORMAL);
+          cab6720.setFunction(80,105,160,26,60,12, 4,"Coupler Stack\nCoupler Air Pump",ButtonType.NORMAL);
+          cab6720.setFunction(80,135,160,26,60,12, 5,"Blow Down\nIncrease Chuff",ButtonType.NORMAL);
+          cab6720.setFunction(80,165,160,26,60,12, 6,"Water Fill\nDecrease Chuff",ButtonType.NORMAL);
+          cab6720.setFunction(80,195,160,26,60,12, 8,"Mute",ButtonType.NORMAL);
+          cab6720.setFunction(80,225,160,26,60,12, 9,"Startup\nShutdown Engine",ButtonType.NORMAL);
+          cab6720.setFunction(80,255,160,26,60,12,10,"Coal Shovel or Auger",ButtonType.NORMAL);
+          cab6720.setFunction(80,285,160,26,60,12,11,"Water Injectors",ButtonType.ONESHOT);
+          cab6720.setFunction(80,315,160,26,60,12,12,"Brake Set, Release\nSqueal",ButtonType.ONESHOT);
+          cab6720.setFunction(80,345,160,26,60,12,13,"Grade Crossing Horn",ButtonType.ONESHOT,CabFunction.S_HORN);
+       // cab6720.functionButtonWindow(220,59,70,340,backgroundColor,backgroundColor);
+          cab6720.setFunction(80,375,160,26,60,12,14,"Passenger Notices",ButtonType.ONESHOT);
+          cab6720.setFunction(80,405,160,26,60,12,15,"Freight Notices",ButtonType.ONESHOT);
+          cab6720.setFunction(80,435,160,26,60,12,16,"Maintenance Sounds",ButtonType.ONESHOT);
+          cab6720.setFunction(80,465,160,26,60,12,17,"Crew Radio",ButtonType.ONESHOT);
+          cab6720.setFunction(80,495,160,26,60,12,18,"City Sounds",ButtonType.ONESHOT);
+          cab6720.setFunction(80,525,160,26,60,12,19,"Farm Sounds",ButtonType.ONESHOT);
+          cab6720.setFunction(80,555,160,26,60,12,20,"Industry Sounds",ButtonType.ONESHOT);
+          cab6720.setFunction(80,585,160,26,60,12,21,"Lumber Mill",ButtonType.ONESHOT);
+
+      //  Insert this line to get a second screen accessable by a "More..." button
+          //  cab6720.functionButtonWindow(220,59,70,340,backgroundColor,backgroundColor);
+   
+      //  Example of multiple buttons on the same line:
+          // cab54.setFunction(35,135,16,22,60,10,9,"1",ButtonType.NORMAL);
+          // cab54.setFunction(14,135,16,22,60,10,5,"+",ButtonType.ONESHOT);
+          // cab54.setFunction(56,135,16,22,60,10,6,"-",ButtonType.ONESHOT);
 
     // Cab 11 250
     //   |Road Number:  |DCC Addr:  |Decoder: Digitrax  |Model:  Kato 
@@ -446,6 +457,12 @@
         cab12.functionButtonWindow(220,59,70,340,backgroundColor,backgroundColor);
           cab12.setFunction(35,15,60,22,60,10,0,"Lights",ButtonType.NORMAL,CabFunction.F_LIGHT,CabFunction.R_LIGHT);
 
+    // Cab 13 330
+    //   |Road Number:  |DCC Addr:  |Decoder: Digitrax  |Model:  Kato 
+        cab13 = new CabButton(tAx-125,tAy+330,50,30,150,15,113,throttleA);  // Create a CabButton Object w/
+        cab13.setThrottleDefaults(100,50,-50,-45);  //  WHAT IS THIS?? 
+        cab13.functionButtonWindow(220,59,70,340,backgroundColor,backgroundColor);
+          cab13.setFunction(35,15,60,22,60,10,0,"Lights",ButtonType.NORMAL,CabFunction.F_LIGHT,CabFunction.R_LIGHT);
 
 
 //  CREATE THE IMAGE WINDOW FOR THROTTLE A (must be done AFTER throttle A is defined above)
@@ -453,7 +470,9 @@
     imageWindow=new ImageWindow(throttleA,975,450,200,50,color(200,50,50));    //  Not sure if this is required.
     
     
-/*   Mostly deleted  Keeping for reference for the time being.
+/*   Track layout section has Mostly been deleted  Keeping for reference for the time being.
+     See the Sample version of controllerConfing for a very informative sample layout.
+     
 // CREATE AUTO PILOT BUTTON and CLEANING CAR BUTTON (must be done AFTER cab buttons are defined above)
     
 // CREATE MAIN LAYOUT AND DEFINE ALL TRACKS
