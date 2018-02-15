@@ -14,6 +14,7 @@
     //    Error when pressing a throttle when power is not on.
     //    Add Turnouts to main screen.   PVC
     //    Add indicator (Signal?) lamps for sidings that are clear to the main line.   PVC
+    //    Make a smaller version of the screen for laptops.  OR!!!! Make two windows.  woah, that may be the answer.
     //
     //    DECLARE "GLOBAL" VARIABLES and OBJECTS  - My Additions
     //    PImage layoutPhoto; 
