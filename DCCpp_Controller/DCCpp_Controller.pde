@@ -95,7 +95,7 @@ PImage backGroundImage;
 
 void settings(){
   size(SCREEN_WIDTH,SCREEN_HEIGHT);
-
+  // fullScreen();
 }
 
 //////////////////////////////////////////////////////////////////////////

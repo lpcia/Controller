@@ -34,6 +34,7 @@
   int lastTime;
   PFont throttleFont, messageFont, buttonFont;
   color backgroundColor;
+  color buttonColor;
   XML dccStatusXML, arduinoPortXML, sensorButtonsXML, autoPilotXML, cabDefaultsXML, serverListXML;
   
   DccComponent selectedComponent, previousComponent;
@@ -95,6 +96,7 @@
     rectMode(CENTER);
     textAlign(CENTER,CENTER);
     backgroundColor=color(#A2724D);
+    buttonColor=color(30);
     backGroundImage = loadImage("DCCppBackground.png");
     aPort=new ArduinoPort();
     
@@ -354,7 +356,7 @@
     // Cab 4 -30  
     //  Santa Fe SD40-2 |Road Number: 5077 |DCC Addr: 77 |Decoder: Digitrax DN163K1C |Model:  Kato 176-8208
     //  Digitrax 1 Amp N Scale Mobile Decoder for Kato N scale SD40-2 locos made from year 2006 onward (DN163K1C)
-        cab77 = new CabButton(tAx-125,tAy-30,50,30,#A2724D,15,77,throttleA);  // Create a CabButton Object w/
+        cab77 = new CabButton(tAx-125,tAy-30,50,30,150,15,77,throttleA);  // Create a CabButton Object w/
         cab77.setThrottleDefaults(100,50,-50,-45);
         cab77.functionButtonWindow(220,59,160,28,backgroundColor,backgroundColor);
           cab77.setFunction(80,15,156,26,30,12,0,"Lights",ButtonType.NORMAL,CabFunction.F_LIGHT,CabFunction.R_LIGHT);
@@ -446,30 +448,30 @@
 
     // Cab 11 
     //   |Road Number:  |DCC Addr:  |Decoder: Digitrax  |Model:  Kato 
-        cab11 = new CabButton(tAx-125,tAy+250,50,30,150,15,111,throttleA);  // Create a CabButton Object w/
+        cab11 = new CabButton(tAx-125,tAy+250,50,30,31,15,111,throttleA);  // Create a CabButton Object w/
         cab11.setThrottleDefaults(100,50,-50,-45);
         cab11.functionButtonWindow(220,59,0,0,backgroundColor,backgroundColor);
     // Cab 12 
     //   |Road Number:  |DCC Addr:  |Decoder: Digitrax  |Model:  Kato 
-        cab12 = new CabButton(tAx-125,tAy+290,50,30,150,15,112,throttleA);  // Create a CabButton Object w/
+        cab12 = new CabButton(tAx-125,tAy+290,50,30,32,15,112,throttleA);  // Create a CabButton Object w/
         cab12.setThrottleDefaults(100,50,-50,-45);
         cab12.functionButtonWindow(220,59,0,0,backgroundColor,backgroundColor);
 
     // Cab 13 
     //   |Road Number:  |DCC Addr:  |Decoder: Digitrax  |Model:  Kato 
-        cab13 = new CabButton(tAx-125,tAy+330,50,30,150,15,113,throttleA);  // Create a CabButton Object w/
+        cab13 = new CabButton(tAx-125,tAy+330,50,30,33,15,113,throttleA);  // Create a CabButton Object w/
         cab13.setThrottleDefaults(100,50,-50,-45);
         cab13.functionButtonWindow(220,59,0,0,backgroundColor,backgroundColor);
 
     // Cab 14 
     //   |Road Number:  |DCC Addr:  |Decoder: Digitrax  |Model:  Kato 
-        cab14 = new CabButton(tAx-125,tAy+370,50,30,150,15,114,throttleA);  // Create a CabButton Object w/
+        cab14 = new CabButton(tAx-125,tAy+370,50,30,34,15,114,throttleA);  // Create a CabButton Object w/
         cab14.setThrottleDefaults(100,50,-50,-45);
         cab14.functionButtonWindow(220,59,0,0,backgroundColor,backgroundColor);
 
     // Cab 15 
     //   |Road Number:  |DCC Addr:  |Decoder: Digitrax  |Model:  Kato 
-        cab15 = new CabButton(tAx-125,tAy+410,50,30,150,15,115,throttleA);  // Create a CabButton Object w/
+        cab15 = new CabButton(tAx-125,tAy+410,50,30,35,15,115,throttleA);  // Create a CabButton Object w/
         cab15.setThrottleDefaults(100,50,-50,-45); 
         cab15.functionButtonWindow(220,59,0,0,backgroundColor,backgroundColor);
 
