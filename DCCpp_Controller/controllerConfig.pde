@@ -269,7 +269,7 @@
     new MessageBox(extrasWindow,250,20,0,0,color(175),18,"Extra Functions",color(50,50,200));
 //    new RectButton(extrasWindow,260,80,120,50,85,color(0),16,"Sound\nEffects",0);        
 
-/* CREATE THE LED LIGHT-STRIP WINDOW:    // No Light Show for me (yet)
+/* CREATE THE LED LIGHT-STRIP WINDOW:    // No Light Show for me (yet)   Good example of controlling devices from the arduino's GPIO pins????
 
     ledWindow = new Window(500,200,550,425,color(0),color(0,0,200));
     new DragBar(ledWindow,0,0,550,10,color(0,0,200));
@@ -286,23 +286,19 @@
     ledBlueMsg = new MessageBox(ledWindow,360,255,-1,0,color(175),18,"Blue:  -",color(200,200,200));
 */
 
-//    msgBoxMain=new MessageBox(width/2,12,width,25,color(200),20,"Searching for Base Station: "+arduinoPortXML.getContent(),color(30,30,150));
-//    new HelpButton(width-50,12,22,22,150,20,"?");
-
-
 // CREATE POWER BUTTON, QUIT BUTTON, and CURRENT METER
     powerButton=new PowerButton(75,710,100,30,100,18,"POWER");
                 new QuitButton(190,710,100,30,250,18,"QUIT");  //  x, y, kWidth, kHeight, boxColor, fontSize)
 
     currentMeter = new CurrentMeter(30,790,300,100,675,5);
 
-// CREATE TOP-OF-SCREEN MESSAGE BAR
-    msgBoxMain=new MessageBox(204,755,375,50,color(#A2724D),14,"Searching for Base Station:\n"+arduinoPortXML.getContent(),color(30,30,150));
+// CREATE TWO LINE MESSAGE BAR     xPos, yPos, kWidth, kHeight, boxColor, fontSize
+    msgBoxMain=new MessageBox(204,755,375,50,color(255),14,"Searching for Base Station:\n"+arduinoPortXML.getContent(),color(30,30,150));
 
-                                                                //xPos, yPos, kWidth, kHeight, boxColor, fontSize
 // CREATE CLOCK  AND HELP BUTTON
     msgBoxClock=new MessageBox(180,910,0,30,#A2724D,30,"00:00:00",color(#A2724D));
                 new HelpButton(370,910,22,22,150,20,"?");
+
 // CREATE THROTTLE, DEFINE CAB BUTTONS, and SET FUNCTIONS FOR EACH CAB  ================================================================================
     
     int tAx=175;  // Horizontal Button Location 
@@ -451,7 +447,7 @@
         cab12.setThrottleDefaults(100,50,-50,-45);
         cab12.functionButtonWindow(220,125,0,0,backgroundColor,backgroundColor);
 
-/*  Future Second page
+/*  Future Second page???
     // Cab 13 
     //   |Road Number:  |DCC Addr:  |Decoder: Digitrax  |Model:  Kato 
         cab13 = new CabButton(tAx-125,tAy+330,50,30,33,15,113,throttleA);  // Create a CabButton Object w/
