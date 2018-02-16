@@ -8,6 +8,8 @@
 //
 //  RectButton    - variant of EllipseButton that define a rectanglular button
 //
+//  Updates by PVC
+//       //  LINE 147: Added 5th parameter (7) to round off the corners of buttons
 //////////////////////////////////////////////////////////////////////////
 
 class EllipseButton extends DccComponent{
@@ -146,7 +148,7 @@ class RectButton extends EllipseButton{
     rectMode(CENTER);
     noStroke();
     fill(color(baseHue,255,isOn?255:125));
-    rect(xPos+xWindow(),yPos+yWindow(),bWidth,bHeight);
+    rect(xPos+xWindow(),yPos+yWindow(),bWidth,bHeight,7);  //  Added 5th parameter (7) to round off the corners of buttons
     fill(textColor);
     textFont(buttonFont,fontSize);
     textAlign(CENTER,CENTER);

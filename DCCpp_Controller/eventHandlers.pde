@@ -247,17 +247,17 @@ void clientEvent(Client c){
           extrasWindow.toggle();
           break;
 
-        case 'x':
-          autoWindow.toggle();
-          break;
+//        case 'x':
+//          autoWindow.toggle();
+//          break;
 
         case 'S':
           sensorWindow.toggle();
           break;
 
-        case 'l':
-          ledWindow.toggle();
-          break;
+//        case 'l':
+//          ledWindow.toggle();
+//          break;
 
         case 's':
           portWindow.toggle();          
@@ -275,12 +275,12 @@ void clientEvent(Client c){
           diagWindow.toggle();          
           break;
           
-        case 'i':
-          if(layoutBridge.equals(layout2))
-            layoutBridge.copy(layout);
-          else
-            layoutBridge.copy(layout2);
-          break;
+//        case 'i':
+//          if(layoutBridge.equals(layout2))
+//            layoutBridge.copy(layout);
+//          else
+//            layoutBridge.copy(layout2);
+//          break;
           
         case 'p':
           progWindow.toggle();
@@ -305,6 +305,8 @@ void clientEvent(Client c){
         case '5':
         case '6':
         case '7':
+        case '8':
+        case '9':
           cabButtons.get(int(k)-int('1')).pressed();
           break;
           
