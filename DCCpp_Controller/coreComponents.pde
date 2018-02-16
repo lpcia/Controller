@@ -24,14 +24,6 @@
 //                       Accessory Window that includes these two input boxes as well
 //                       as ON and OFF buttons.
 //
-//  CleaningCarButton -  sends a DCC THROTTLE COMMAND to the DCC++ Base Station that operates
-//                       a mobile decoder with a pre-specified cab number
-//                    -  this decoder drives a motor that spins a cleaning pad in a
-//                       track-cleaning car
-//                    -  clicking the button toggles the throttle between either 0 or 126 (max speed)
-//                    -  the default configuration of DCC++ Controller defines an
-//                       Extras Window that includes this button
-//
 //  LEDColorButton    -  provide for interactive control of an LED-RGB Light Strip
 //
 //  2018 02 15 Changed the error messages on lines 162 and 164 to fit on two lines
@@ -186,7 +178,7 @@ class QuitButton extends RectButton{
 
   void turnOn(){
     super.turnOn();
-    aPort.write("<0>");  // Turn power off on quit
+    aPort.write("<0>");  // Turn power off on quit  PVC 2018 02 15
     exit();
   }
       
@@ -215,47 +207,6 @@ class HelpButton extends EllipseButton{
       
 } // HelpButton Class
 
-//////////////////////////////////////////////////////////////////////////
-//  DCC Component: CleaningCar Button
-//////////////////////////////////////////////////////////////////////////
-/* 2018 02 15 Turned off Cleaning Car for now
-class CleaningCarButton extends RectButton{
-  int cab;
-  int reg;
-
-  CleaningCarButton(int cab, int xPos, int yPos, int bWidth, int bHeight, int baseHue, int fontSize, String bText){
-    this(null, cab, xPos, yPos, bWidth, bHeight, baseHue, fontSize, bText);
-  }
-  
-  CleaningCarButton(Window window, int cab, int xPos, int yPos, int bWidth, int bHeight, int baseHue, int fontSize, String bText){
-    super(window, xPos, yPos, bWidth, bHeight, baseHue, color(0), fontSize, bText, ButtonType.NORMAL);
-    reg=cabButtons.size()+1;
-    this.cab=cab;
-  } // PowerButton
-  
-//////////////////////////////////////////////////////////////////////////
-
-  void turnOn(){
-    super.turnOn();
-    aPort.write("<t"+reg+" "+cab+" 126 1>");
-
-  }
-
-//////////////////////////////////////////////////////////////////////////
-
-  void turnOff(){
-    super.turnOff();
-    aPort.write("<t"+reg+" "+cab+" 0 1>");
-  }
-
-//////////////////////////////////////////////////////////////////////////
-
-  void shiftPressed(){
-    autoPilot.clean();
-  }
-        
-} // CleaningCarButton Class
-*/
 //////////////////////////////////////////////////////////////////////////
 //  DCC Component: LED Color Button
 //////////////////////////////////////////////////////////////////////////

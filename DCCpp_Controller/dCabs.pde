@@ -222,12 +222,6 @@ class CabButton extends RectButton{
     colorMode(HSB,255);
     editWindow = new Window(xPos-(bWidth/2),yPos-(bHeight/2),bWidth,bHeight,color(baseHue,255,255),color(baseHue,255,125));   
     cabNumInput = new InputBox(this);
-    
-    speedXML=autoPilotXML.getChild(name);
-    if(speedXML==null){
-      speedXML=autoPilotXML.addChild(name);
-      speedXML.setContent(ThrottleSpeed.STOP.name());
-    }
 
     cabDefaultXML=cabDefaultsXML.getChild(name);
     if(cabDefaultXML==null){

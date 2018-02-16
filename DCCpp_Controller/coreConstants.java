@@ -47,29 +47,3 @@ enum ThrottleSpeed{
     return(null);
   }
 }
-
-enum AutoProgram{
-  NONE ("NONE"),
-  ALL_CABS_RUN ("ALL CABS RUN"),
-  ALL_CABS_PARK ("ALL CABS PARK"),
-  SINGLE_CAB_PARK ("SINGLE CAB PARK"),
-  AUTO_CLEAN ("AUTO CLEAN"),
-  SINGLE_CAB_RUN ("SINGLE CAB RUN");
-  
-  String name;
-  AutoProgram(String name){
-    this.name=name;
-  }
-  static AutoProgram index(String findName){
-    for(AutoProgram p : AutoProgram.values()){
-      if(p.name.equals(findName))
-        return(p);
-    }
-    return(null);
-  }
-  
-  boolean equals(AutoProgram p){
-    return(this==p);
-  }
-    
-}

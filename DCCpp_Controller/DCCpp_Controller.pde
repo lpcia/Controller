@@ -158,8 +158,6 @@ void draw(){
       println("Couldn't save. Will retry");
     }
   }
-  
-//  autoPilot.safetyCheck();
     
 } // draw
 

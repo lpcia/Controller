@@ -11,13 +11,13 @@
 //
 //  ToDo:
 //    Fix backGroundColor
-//    Make sure power is off when hitting the quit button
+//    Make sure power is off when hitting the quit button  Compeleted 2018 05 15
 //    Error when pressing a throttle when power is not on.
 //    Add Turnouts to main screen.   PVC
 //    Add indicator (Signal?) lamps for sidings that are clear to the main line.
 //    Does PImage really need to be on line 92 of DCCpp_Controller, if so, should it be proceeded by the "Final" keyword
-//
-//
+//    locomotive lamps lite up as soon as power button is pushed.  I don't like this.     aPort.write("<0>"); 
+//    disableing the background image showed that the clock acting strangely
 //
 //
 //
@@ -35,7 +35,7 @@
   PFont throttleFont, messageFont, buttonFont;
   color backgroundColor;
   color buttonColor;
-  XML dccStatusXML, arduinoPortXML, sensorButtonsXML, autoPilotXML, cabDefaultsXML, serverListXML;
+  XML dccStatusXML, arduinoPortXML, sensorButtonsXML, cabDefaultsXML, serverListXML;
   
   DccComponent selectedComponent, previousComponent;
   ArrayList<DccComponent> dccComponents = new ArrayList<DccComponent>();
@@ -89,6 +89,7 @@
 ////////////////////////////////////////////////////////////////////////
 
   void Initialize(){
+
     colorMode(RGB,255);
     throttleFont=loadFont("OCRAExtended-26.vlw");
     messageFont=loadFont("LucidaConsole-18.vlw");
@@ -99,7 +100,8 @@
     buttonColor=color(30);
     backGroundImage = loadImage("DCCppBackground.png");
     aPort=new ArduinoPort();
-    
+
+        
 // READ, OR CREATE IF NEEDED, XML DCC STATUS FILE
     
     dccStatusXML=loadXML(STATUS_FILE);
@@ -122,11 +124,6 @@
     sensorButtonsXML=dccStatusXML.getChild("sensorButtons");
     if(sensorButtonsXML==null){
       sensorButtonsXML=dccStatusXML.addChild("sensorButtons");
-    }
-
-    autoPilotXML=dccStatusXML.getChild("autoPilot");
-    if(autoPilotXML==null){
-      autoPilotXML=dccStatusXML.addChild("autoPilot");
     }
     
     cabDefaultsXML=dccStatusXML.getChild("cabDefaults");
@@ -240,16 +237,7 @@
     msgBoxDiagOut=new MessageBox(diagWindow,250,60,0,0,color(175),18,"---",color(50,50,200));
     new MessageBox(diagWindow,10,90,-1,0,color(175),18,"Proc:",color(50,50,200));
     msgBoxDiagIn=new MessageBox(diagWindow,250,90,0,0,color(175),18,"---",color(50,50,200));
-
-/* CREATE THE AUTOPILOT DIAGNOSTICS WINDOW  // No need for autopilot on my layout.
-    
-    autoWindow = new Window(400,300,500,330,color(175),color(50,200,50));
-    new DragBar(autoWindow,0,0,500,10,color(50,200,50));
-    new CloseButton(autoWindow,488,0,10,10,color(50,200,50),color(255,255,255));
-    new MessageBox(autoWindow,250,20,0,0,color(175),18,"AutoPilot Window",color(50,50,150));
-    msgAutoState=new MessageBox(autoWindow,0,180,-1,0,color(175),18,"?",color(50,50,250));
-    msgAutoTimer=new MessageBox(autoWindow,55,310,-1,0,color(175),18,"Timer =",color(50,50,250));
-*/    
+  
 // CREATE THE SENSORS DIAGNOSTICS WINDOW 
     
     sensorWindow = new Window(400,300,500,350,color(175),color(50,200,50));

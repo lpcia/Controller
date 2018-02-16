@@ -85,7 +85,7 @@ void clientEvent(Client c){
 
       case 'i':
         baseID=c;
-        msgBoxMain.setMessage("Found:\n"+baseID,color(0,150,0));   //  =======================  NEED TO CANGE THIS TO TWO LINES SO IT FITS in the Message Box
+        msgBoxMain.setMessage("DCC++ Hardware Found",color(0,150,0));   //  ("Found:\n"+baseID,color(0,150,0))  NEED TO CANGE THIS TO TWO LINES SO IT FITS in the Message Box
         break;
         
       case '*':
