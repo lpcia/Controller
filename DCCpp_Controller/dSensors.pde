@@ -24,6 +24,7 @@
 //                    user can manually toggle the sensor "on" or "off" by clicking the appropriate sensor button
 //                  
 //////////////////////////////////////////////////////////////////////////
+/*   PVC 2018 02 15  Turned of Autopilot.  This does not interest me at this time.
 
 class AutoPilotButton extends RectButton{
   int[] cabs={8601,6021,1506,622,1202,54};                              // list of all cabs to be included in autoPilot - order does not matter since it will be randomized
@@ -109,7 +110,7 @@ class AutoPilotButton extends RectButton{
     }
     
     if(program==AutoProgram.NONE){
-      msgBoxMain.setMessage("Can't resume Auto Pilot until program specified!",color(50,50,200));
+      msgBoxMain.setMessage("Can't resume Auto Pilot\nuntil program specified!",color(50,50,200));
       return;
     }
     
@@ -702,7 +703,7 @@ class AutoPilotButton extends RectButton{
   } // safetyCheck
   
 } // AutoPilot Class
-
+*/
 //////////////////////////////////////////////////////////////////////////
 //  DCC Component: TrackSensor
 //////////////////////////////////////////////////////////////////////////
@@ -785,7 +786,7 @@ class TrackSensor extends Track{
 
   void pressed(boolean isActive){
     this.isActive=isActive;    
-    autoPilot.process(sensorNum,isActive);
+//    autoPilot.process(sensorNum,isActive);
     sensorButtonXML.setContent(str(isActive));
     saveXMLFlag=true;
     if(isActive){

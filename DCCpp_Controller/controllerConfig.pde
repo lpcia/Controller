@@ -51,8 +51,8 @@
   
   ArduinoPort       aPort;
   PowerButton       powerButton;
-  AutoPilotButton   autoPilot;
-  CleaningCarButton cleaningCab;
+  //AutoPilotButton   autoPilot;
+  //CleaningCarButton cleaningCab;
   Throttle          throttleA;
   Layout            layout,layout2,layoutBridge;
   MessageBox        msgBoxMain, msgBoxDiagIn, msgBoxDiagOut, msgBoxClock;
@@ -286,26 +286,27 @@
     ledBlueMsg = new MessageBox(ledWindow,360,255,-1,0,color(175),18,"Blue:  -",color(200,200,200));
 */
 
+//    msgBoxMain=new MessageBox(width/2,12,width,25,color(200),20,"Searching for Base Station: "+arduinoPortXML.getContent(),color(30,30,150));
+//    new HelpButton(width-50,12,22,22,150,20,"?");
 
-// CREATE TOP-OF-SCREEN MESSAGE BAR AND HELP BUTTON
 
-    msgBoxMain=new MessageBox(width/2,12,width,25,color(200),20,"Searching for Base Station: "+arduinoPortXML.getContent(),color(30,30,150));
-    new HelpButton(width-50,12,22,22,150,20,"?");
-                                                                //xPos, yPos, kWidth, kHeight, boxColor, fontSize
 // CREATE POWER BUTTON, QUIT BUTTON, and CURRENT METER
-    
-    powerButton=new PowerButton(75,735,100,30,100,18,"POWER");
-                new QuitButton(190,735,100,30,250,18,"QUIT");  //  x, y, kWidth, kHeight, boxColor, fontSize)
+    powerButton=new PowerButton(75,710,100,30,100,18,"POWER");
+                new QuitButton(190,710,100,30,250,18,"QUIT");  //  x, y, kWidth, kHeight, boxColor, fontSize)
 
-    currentMeter = new CurrentMeter(30,765,300,100,675,5);
+    currentMeter = new CurrentMeter(30,790,300,100,675,5);
 
-// CREATE CLOCK
-    msgBoxClock=new MessageBox(180,895,0,30,#A2724D,30,"00:00:00",color(#A2724D));
+// CREATE TOP-OF-SCREEN MESSAGE BAR
+    msgBoxMain=new MessageBox(204,755,375,50,color(#A2724D),14,"Searching for Base Station:\n"+arduinoPortXML.getContent(),color(30,30,150));
 
+                                                                //xPos, yPos, kWidth, kHeight, boxColor, fontSize
+// CREATE CLOCK  AND HELP BUTTON
+    msgBoxClock=new MessageBox(180,910,0,30,#A2724D,30,"00:00:00",color(#A2724D));
+                new HelpButton(370,910,22,22,150,20,"?");
 // CREATE THROTTLE, DEFINE CAB BUTTONS, and SET FUNCTIONS FOR EACH CAB  ================================================================================
     
     int tAx=175;  // Horizontal Button Location 
-    int tAy=286;  // Vertical Button location 
+    int tAy=250;  // Vertical Button location 
     int rX=800;
     int rY=550;
     

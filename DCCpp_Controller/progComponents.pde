@@ -79,7 +79,7 @@ class ProgWriteReadButton extends EllipseButton implements CallBack{
     int cv=progCVInput.getIntValue();
     int val=progValueInput.getIntValue();
     if(cv<1 || cv>1024){
-       msgBoxMain.setMessage("Error - CV must be in range 1-1024",color(255,30,30));
+       msgBoxMain.setMessage("Error\nCV must be in range 1-1024",color(255,30,30));
     } else if(bText=="WRITE"){
       aPort.write("<W"+cv+" "+val+" "+callBacks.indexOf(this)+" 1>");
     } else if(bText=="READ"){
@@ -98,7 +98,7 @@ class ProgWriteReadButton extends EllipseButton implements CallBack{
     progCVInput.setIntValue(cv);
     
     if(val<0){
-      msgBoxMain.setMessage(n==0?"Error - Read Failed":"Error - Write Failed",color(255,30,30));
+      msgBoxMain.setMessage(n==0?"Error\nRead Failed":"Error\nWrite Failed",color(255,30,30));
       progHEXInput.resetValue();
       progBINInput.resetValue();
       progDECInput.resetValue();
@@ -155,7 +155,7 @@ class ProgAddReadButton extends EllipseButton implements CallBack{
       
       case 1:
         if(val<0){
-          msgBoxMain.setMessage("Error - Reading Short Address Failed",color(255,30,30));
+          msgBoxMain.setMessage("Error\nReading Short Address Failed",color(255,30,30));
           shortAddInput.resetValue();
         } else{
           shortAddInput.setIntValue(val);
@@ -165,7 +165,7 @@ class ProgAddReadButton extends EllipseButton implements CallBack{
 
       case 17:
         if(val<0){
-          msgBoxMain.setMessage("Error - Reading First Byte of Long Address Failed",color(255,30,30));
+          msgBoxMain.setMessage("Error\nReading First Byte of Long Address Failed",color(255,30,30));
           longAddInput.resetValue();
         } else{
           longAdd=(val&0x3F)*256;
@@ -175,7 +175,7 @@ class ProgAddReadButton extends EllipseButton implements CallBack{
         
       case 18:
         if(val<0){
-          msgBoxMain.setMessage("Error - Reading Second Byte of Long Address Failed",color(255,30,30));
+          msgBoxMain.setMessage("Error\nReading Second Byte of Long Address Failed",color(255,30,30));
           longAddInput.resetValue();
         } else{
           longAdd+=val;
@@ -186,7 +186,7 @@ class ProgAddReadButton extends EllipseButton implements CallBack{
 
       case 29:
         if(val<0){
-          msgBoxMain.setMessage("Error - Reading Second Byte of Long Address Failed",color(255,30,30));
+          msgBoxMain.setMessage("Error\nReading Second Byte of Long Address Failed",color(255,30,30));
           activeAddBox.setMessage("?",color(200,50,50));
         } else{
           if((val&0x20)==0)
@@ -228,7 +228,7 @@ class ProgShortAddWriteButton extends EllipseButton implements CallBack{
     int val=addInput.getIntValue();
 
     if(val<1 || val>127){
-       msgBoxMain.setMessage("Error - Short Address must be in range 1-127",color(255,30,30));
+       msgBoxMain.setMessage("Error\nShort Address must be in range 1-127",color(255,30,30));
     } else {
       aPort.write("<W1"+" "+val+" "+callBacks.indexOf(this)+" 0>");
     }
@@ -244,7 +244,7 @@ class ProgShortAddWriteButton extends EllipseButton implements CallBack{
     int val=int(cs[1]);
 
     if(val<0){
-      msgBoxMain.setMessage("Error - Write Short Address Failed",color(255,30,30));
+      msgBoxMain.setMessage("Error\nWrite Short Address Failed",color(255,30,30));
       addInput.resetValue();
     } else{
       msgBoxMain.setMessage("Write Short Address Succeeded",color(30,150,30));
@@ -281,7 +281,7 @@ class ProgLongAddWriteButton extends EllipseButton implements CallBack{
     longAddIn=addInput.getIntValue();
 
     if(longAddIn<0 || longAddIn>10239){
-      msgBoxMain.setMessage("Error - Long Address must be in range 0-10239",color(255,30,30));
+      msgBoxMain.setMessage("Error\nLong Address must be in range 0-10239",color(255,30,30));
     } else {
       aPort.write("<W17"+" "+(longAddIn/256+192)+" "+callBacks.indexOf(this)+" 0>");
     }
@@ -300,7 +300,7 @@ class ProgLongAddWriteButton extends EllipseButton implements CallBack{
       
       case 17:
         if(val<0){
-          msgBoxMain.setMessage("Error - Writing First Byte of Long Address Failed",color(255,30,30));
+          msgBoxMain.setMessage("Error\nWriting First Byte of Long Address Failed",color(255,30,30));
           addInput.resetValue();
         } else{
           longAddOut=(val&0x3F)*256;
@@ -310,7 +310,7 @@ class ProgLongAddWriteButton extends EllipseButton implements CallBack{
 
       case 18:
         if(val<0){
-          msgBoxMain.setMessage("Error - Writing Second Byte of Long Address Failed",color(255,30,30));
+          msgBoxMain.setMessage("Error\nWriting Second Byte of Long Address Failed",color(255,30,30));
           addInput.resetValue();
         } else{
           msgBoxMain.setMessage("Write Long Address Succeeded",color(30,150,30));
@@ -364,7 +364,7 @@ class ProgLongShortButton extends EllipseButton implements CallBack{
     switch(val){
   
       case -1:
-        msgBoxMain.setMessage(n==1?"Error - Activating Long Address Failed":"Error - Activating Short Address Failed",color(255,30,30));
+        msgBoxMain.setMessage(n==1?"Error\nActivating Long Address Failed":"Error\nActivating Short Address Failed",color(255,30,30));
         activeAddBox.setMessage("?",color(200,50,50));
         break;
         
@@ -409,11 +409,11 @@ class OpWriteButton extends EllipseButton{
     int val=opValueInput.getIntValue();
 
     if(cab<1 || cab>10239){
-       msgBoxMain.setMessage("Error - Cab must be in range 1-10239",color(255,30,30));
+       msgBoxMain.setMessage("Error\nCab must be in range 1-10239",color(255,30,30));
        return;
     }
     if(cv<1 || cv>1024){
-       msgBoxMain.setMessage("Error - CV must be in range 1-1024",color(255,30,30));
+       msgBoxMain.setMessage("Error\nCV must be in range 1-1024",color(255,30,30));
        return;
     }
       
@@ -423,7 +423,7 @@ class OpWriteButton extends EllipseButton{
     }
     
     if(val>7){
-       msgBoxMain.setMessage("Error - Bit must be in range 0-7",color(255,30,30));
+       msgBoxMain.setMessage("Error\nBit must be in range 0-7",color(255,30,30));
        return;
     }
 

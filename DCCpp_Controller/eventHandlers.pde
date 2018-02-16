@@ -27,7 +27,7 @@ void mousePressed(){
       if(keyCode == SHIFT){
         selectedComponent.shiftPressed();
       } else if(keyCode == CONTROL){
-          msgBoxMain.setMessage("Component Name: "+selectedComponent.componentName,color(30,30,150));
+          msgBoxMain.setMessage("Component Name:\n"+selectedComponent.componentName,color(30,30,150));
       }
     }
     else if(mouseButton==LEFT){
@@ -85,7 +85,7 @@ void clientEvent(Client c){
 
       case 'i':
         baseID=c;
-        msgBoxMain.setMessage("Found "+baseID,color(0,150,0));
+        msgBoxMain.setMessage("Found:\n"+baseID,color(0,150,0));
         break;
         
       case '*':
@@ -149,13 +149,13 @@ void clientEvent(Client c){
         ledColorButton.update(0);
         colorMode(RGB,255);        
         break;
-        
+/*        
       case 'U':
         autoPilot.cabList.clear();        
         autoPilot.setProgram(AutoProgram.SINGLE_CAB_RUN);
         autoPilot.turnOn();
         break;
-        
+     */   
       case 'p':
         if(c.equals("1")){
           powerButton.isOn=true;
@@ -164,10 +164,10 @@ void clientEvent(Client c){
           powerButton.isOn=false;
           msgBoxMain.setMessage("Track Power Off",color(30,30,150));
         } else if(c.equals("2")){
-          msgBoxMain.setMessage("MAIN Track Current Overload - Power Off",color(200,30,30));
+          msgBoxMain.setMessage("MAIN Track Current Overload\nPower Off",color(200,30,30));
           powerButton.isOn=false;
         } else if(c.equals("3")){
-          msgBoxMain.setMessage("PROG Track Current Overload - Power Off",color(200,30,30));
+          msgBoxMain.setMessage("PROG Track Current Overload\nPower Off",color(200,30,30));
           powerButton.isOn=false;
         }
         break;

@@ -307,10 +307,10 @@ class CabButton extends RectButton{
   }
     
 //////////////////////////////////////////////////////////////////////////
-
-  void shiftPressed(){
-    autoPilot.parkCab(this);
-  }
+//  2018 02 15  PVC turned off autopilot and cleaning car
+//  void shiftPressed(){
+//    autoPilot.parkCab(this);
+//  }
   
 //////////////////////////////////////////////////////////////////////////
 

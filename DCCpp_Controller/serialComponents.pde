@@ -203,11 +203,11 @@ class ArduinoPort{
     if(n.length==4 && n[0]>0 && n[0]<=255 && n[1]>=0 && n[1]<=255 && n[2]>=0 && n[2]<=255 && n[3]>=0 && n[3]<=255){
       client=new Client(Applet,portName,2560);
       if(client.ip()==null){
-        msgBoxMain.setMessage("Can't connect to Server: "+portName,color(200,50,0));
+        msgBoxMain.setMessage("Can't connect to Server:\n"+portName,color(200,50,0));
         client=null;
         return;
       } else if(client!=null){
-        msgBoxMain.setMessage("Waiting for Base Station at Server: "+client.ip(),color(200,50,0));
+        msgBoxMain.setMessage("Waiting for Base Station at Server:\n"+client.ip(),color(200,50,0));
         client.write("<s>");
         return;
       }
@@ -223,18 +223,18 @@ class ArduinoPort{
       port=new Serial(Applet,portName,BASE_BAUD);
       port.bufferUntil('>');
     } catch(Exception e){
-      msgBoxMain.setMessage("Serial Port Busy: "+portName,color(200,50,0));
+      msgBoxMain.setMessage("Serial Port Busy:\n"+portName,color(200,50,0));
       port=null;
       return;
     }
 
     if(port.port==null){
-      msgBoxMain.setMessage("Can't find Serial Port: "+portName,color(200,50,0));
+      msgBoxMain.setMessage("Can't find Serial Port:\n"+portName,color(200,50,0));
       port=null;
       return;
     }
 
-    msgBoxMain.setMessage("Waiting for Base Station at Serial Port: "+portName,color(200,50,0));
+    msgBoxMain.setMessage("Waiting for Base Station at Serial Port:\n"+portName,color(200,50,0));
 
     t=millis();
     while(millis()-t<3000);    

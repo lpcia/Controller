@@ -33,6 +33,9 @@
 //                       Extras Window that includes this button
 //
 //  LEDColorButton    -  provide for interactive control of an LED-RGB Light Strip
+//
+//  2018 02 15 Changed the error messages on lines 162 and 164 to fit on two lines
+//
 
 //////////////////////////////////////////////////////////////////////////
 //  DCC Component: PowerButton
@@ -156,9 +159,9 @@ class AccessoryButton extends EllipseButton{
     int accAddress=accAddInput.getIntValue();
     int accSubAddress=accSubAddInput.getIntValue();
     if(accAddress>511)
-       msgBoxMain.setMessage("Error - Accessory Address must be in range 0-511",color(255,30,30));
+       msgBoxMain.setMessage("Error\nAccessory Address must be in range 0-511",color(255,30,30));
     else if(accSubAddress>3)
-       msgBoxMain.setMessage("Error - Accessory Sub Address must be in range 0-3",color(255,30,30));
+       msgBoxMain.setMessage("Error\nAccessory Sub Address must be in range 0-3",color(255,30,30));
     else
        aPort.write("<a"+accAddress+" "+accSubAddress+" "+(bText.equals("ON")?1:0)+">");
   }
@@ -215,7 +218,7 @@ class HelpButton extends EllipseButton{
 //////////////////////////////////////////////////////////////////////////
 //  DCC Component: CleaningCar Button
 //////////////////////////////////////////////////////////////////////////
-
+/* 2018 02 15 Turned off Cleaning Car for now
 class CleaningCarButton extends RectButton{
   int cab;
   int reg;
@@ -252,7 +255,7 @@ class CleaningCarButton extends RectButton{
   }
         
 } // CleaningCarButton Class
-  
+*/
 //////////////////////////////////////////////////////////////////////////
 //  DCC Component: LED Color Button
 //////////////////////////////////////////////////////////////////////////
