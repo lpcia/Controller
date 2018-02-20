@@ -3,7 +3,9 @@ This Branch of DCC++ is heavly modified to run my personal layout.  My layout is
 Notes:
 I am a wannabe programmer, and I am using this code to learn.  It is very doubtful that I will be able to answer anything but the most rudimentary questions.
 
-I tried to do this with JMRI, but that system is many things to many people )which is what is so great about it) that the code was far too complex for me to work with.
+I tried to do this with JMRI, but that system is many things to many people that the code was far too complex for me to work with.  
+
+I did not and will not change any raw dcc command strings in the code. That said, if you use my code, you are far braver than I am!
 
 My thanks to Gregg for making this availabe for use, and for me, learning!
 
