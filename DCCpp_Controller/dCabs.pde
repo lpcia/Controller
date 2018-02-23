@@ -59,7 +59,12 @@
 //                     * be activated upon pressing the mouse button but de-active when the mouse
 //                       button is released (e.g. a horn)
 //                     * be turned on and then immediately off with a single mouse click (e.g. coupler sounds)
-
+//
+//
+//  Line 393  PVC  Changed color(0) to color(255) - Function button text color from black to white
+//  Line 218  PVC  Changed button color from 0 to 255 , black to white)     Cab button
+//
+//
 //////////////////////////////////////////////////////////////////////////
 //  DCC Component: Throttle
 //////////////////////////////////////////////////////////////////////////
@@ -210,7 +215,7 @@ class CabButton extends RectButton{
   InputBox cabNumInput;
   
   CabButton(int xPos, int yPos, int bWidth, int bHeight, int baseHue, int fontSize, int cab, Throttle throttle){
-    super(null, xPos, yPos, bWidth, bHeight, baseHue, color(0), fontSize, str(cab), ButtonType.NORMAL);
+    super(null, xPos, yPos, bWidth, bHeight, baseHue, color(255), fontSize, str(cab), ButtonType.NORMAL);           // Changed button color from 0 to 255 , black to white)
     this.cab=cab;
     this.throttle=throttle;
     cabButtons.add(this);

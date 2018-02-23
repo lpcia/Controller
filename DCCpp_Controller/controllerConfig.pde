@@ -294,13 +294,17 @@
     int rX=800;
     int rY=550;
     
+//  cabButton parameters    CabButton(xPos, yPos, Width, Height, baseHue, fontSize, Cab Number, Throttle)
+//  setThrottleDefaults parameters (int fullSpeed, int slowSpeed, int reverseSpeed, int reverseSlowSpeed)
+//  setFunction parameters (xPos, yPos, Width, Height, baseHue, fontSize, button Number, Button Name, ButtonType.buttonType, CabFunction.cFunc)
+    
     throttleA=new Throttle(tAx,tAy,1.3);
       
     // Cab 1 
     //  Santa Fe F7A  |Road Number: 300 |DCC Addr: 5 |Decoder: Digitrax SDN144K0A  |Model:  Kato 176-2121
     //  Digitrax 1 Amp N Scale SoundFX/Mobile/FX3 Function Decoder for Kato SD40-2 and similar locos (SDN144K0A)
         cab5 = new CabButton(tAx-125,tAy-150,50,30,150,15,5,throttleA);
-        cab5.setThrottleDefaults(53,30,-20,-13);      // ThrottleDefaults(int fullSpeed, int slowSpeed, int reverseSpeed, int reverseSlowSpeed)
+        cab5.setThrottleDefaults(53,30,-20,-13); 
         cab5.functionButtonWindow(220,87,160,385,backgroundColor,backgroundColor);
           cab5.setFunction(80, 15,156,30,30,12, 0,"Lights",ButtonType.NORMAL,CabFunction.F_LIGHT,CabFunction.R_LIGHT);
           cab5.setFunction(80, 50,156,30,30,12, 1,"Bell",ButtonType.NORMAL,CabFunction.BELL);
