@@ -137,7 +137,7 @@ void clientEvent(Client c){
         }
         
         break;
-        
+ /*        
       case 'L':
         int[] z=int(splitTokens(c));
         color tempColor;
@@ -149,7 +149,7 @@ void clientEvent(Client c){
         ledColorButton.update(0);
         colorMode(RGB,255);        
         break;
-/*        
+       
       case 'U':
         autoPilot.cabList.clear();        
         autoPilot.setProgram(AutoProgram.SINGLE_CAB_RUN);
@@ -190,26 +190,26 @@ void clientEvent(Client c){
         
     if(k==CODED){
       switch(kC){
-        case UP:
+        case UP:                            // Up Arrow Pressed
           if(throttleA.cabButton!=null){
             if(!keyHold)
               throttleA.pressed();
             throttleA.keyControl(1);
           }
           break;
-        case DOWN:
+        case DOWN:                            // Down Arrow Pressed
           if(throttleA.cabButton!=null){
             if(!keyHold)
               throttleA.pressed();
             throttleA.keyControl(-1);
           }
           break;
-        case LEFT:
+        case LEFT:                            // Left Arrow Pressed
           if(throttleA.cabButton!=null){
             throttleA.keyControl(0);
           }
           break;
-        case RIGHT:
+        case RIGHT:                            // Right Arrow Pressed
           if(throttleA.cabButton!=null){
             throttleA.cabButton.stopThrottle();
           }

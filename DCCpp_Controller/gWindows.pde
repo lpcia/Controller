@@ -17,6 +17,9 @@
 //
 //  JPGWindow   -  extends Window to create a generic window box for diplaying a single jpg image
 //
+//  Added by PVC 2018 02 23
+//  PNGWindow   -  extends Window to create a generic window box for displaying an image without close box or dragbar
+//
 //////////////////////////////////////////////////////////////////////////
 
 class Window extends DccComponent{
@@ -287,5 +290,31 @@ class JPGWindow extends Window{
   } // display
     
 } // JPGWindow Class
+
+
+//////////////////////////////////////////////////////////////////////////
+//  DCC Component: PNGWindow - extends Window to create a generic window box for displaying an image without close box or dragbar
+//////////////////////////////////////////////////////////////////////////
+
+class PNGWindow extends Window{
+  PImage img;
+  int w,h;
+    
+  PNGWindow(String PNGFile, int w, int h, int xPos, int yPos, color outlineColor){
+    super(xPos, yPos, w, h, color(255), outlineColor);
+    img=loadImage(PNGFile);
+    this.w=w;
+    this.h=h;    
+  } // Window
+
+//////////////////////////////////////////////////////////////////////////
+
+  void display(){
+    super.display();
+    imageMode(CORNER);
+    image(img,xPos,yPos,w,h);
+  } // display
+    
+} // PNGWindow Class
 
 //////////////////////////////////////////////////////////////////////////
