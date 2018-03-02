@@ -94,6 +94,8 @@ PImage backGroundImage;
 //////////////////////////////////////////////////////////////////////////
 
 void settings(){
+  // Settings() It's only useful when it's absolutely necessary to define the parameters to size() with a variable. OR
+  // ... settings() function is necessary when using Processing code outside of the(PDE). For example, when using the Eclipse code editor...
   size(SCREEN_WIDTH,SCREEN_HEIGHT);
   // fullScreen();
 }

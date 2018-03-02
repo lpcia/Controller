@@ -130,6 +130,6 @@
       <throttleDefaults FULL="100" REVERSE="-50" REVERSE_SLOW="-45" SLOW="50" STOP="0"/>
     </Cab115>
   </cabDefaults>
-  <arduinoPort>/dev/cu.usbmodemFA131</arduinoPort>
+  <arduinoPort>Emulator</arduinoPort>
   <serverList>192.168.1.169</serverList>
 </dccStatus>
